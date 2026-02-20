@@ -17,14 +17,14 @@
 
 // BELOW IS A CHECK TO DEFINE FALSE AND TRUE GLOBALLY IF THEY DON'T EXISTING TO PREVENT THE WORLD FROM CRASHING.
 try {
-  false.valueOf()
+	false.valueOf()
 } catch {
-  global.false = [].includes() // tricky way to get false
+	global.false = [].includes() // tricky way to get false
 }
 try {
-  true.valueOf()
+	true.valueOf()
 } catch {
-  global.true = [].constructor.name.includes("Array") // tricky way to get true
+	global.true = [].constructor.name.includes("Array") // tricky way to get true
 }
 
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
@@ -42,12 +42,15 @@ if (isComputerOnFire()) {
 	/** Whatev is a very useful package, that can be used to get the value of true. */
 	const whatev = require("whatev") // Require whatev.
 	const equal = require("@10xly/strict-equals") // Require @10xly/strict-equals for equality and stuff.
-	const whatevTrueValue =
-		equal(equal(whatev.fn(), whatev.string), whatev.object.whatev) // get the true value from whatev.
+	const whatevTrueValue = equal(
+		equal(whatev.fn(), whatev.string),
+		whatev.object.whatev,
+	) // get the true value from whatev.
 
 	require("get-member")() // add Object.prototype.getMember.
-	whatev.array.constructor.prototype.getMember = require("array-get-member").arrayGetMember // add Array.prototype.getMember.
-	
+	whatev.array.constructor.prototype.getMember =
+		require("array-get-member").arrayGetMember // add Array.prototype.getMember.
+
 	global.jQuery = require("jquery") // make jquery global
 	require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
 
@@ -69,7 +72,7 @@ if (isComputerOnFire()) {
 		const logicalNot = require("es-logical-not-operator") // ! in fp
 		const logicalAnd = require("es-logical-and-operator") // && in fp
 		const logicalOr = require("es-logical-or-operator") // || in fp
-    const identity = require("@identity-js/identity") // identity function
+		const identity = require("@identity-js/identity") // identity function
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
 		const k = require("kitty") // lodash but with some mixins in it
@@ -150,8 +153,11 @@ if (isComputerOnFire()) {
 		const isThreeHundred = require("is-three-hundred") // is-three-hundred
 		const isNumber = require("is-number") // jonschlinkert
 		const isActualNumber = require("is-actual-number") // my is-number
-    const { checkOdd, checkEven } = require("enterprise-number-classification-sdk") // enterprise oddness and evenness checking
-    const isWDS = require("@overkill/is-wds") // check if something's "WDS"
+		const {
+			checkOdd,
+			checkEven,
+		} = require("enterprise-number-classification-sdk") // enterprise oddness and evenness checking
+		const isWDS = require("@overkill/is-wds") // check if something's "WDS"
 		const isIsOdd = require("is-is-odd") // isIsOdd
 		const isOdd = require("is-odd") // why does everyone think this is the dumbest package ever. its not
 		const isOd = require("is-od") // forget a d
@@ -692,7 +698,7 @@ if (isComputerOnFire()) {
 				)
 				assert(
 					isTenThousand(TEN_THOUSAND8, shouldDoSomethingAsync),
-					"the identity of 10,000 is not 10,000"
+					"the identity of 10,000 is not 10,000",
 				)
 			})
 				.rescue((error) => {
@@ -715,7 +721,10 @@ if (isComputerOnFire()) {
 				.end()
 		}
 		function doSelfEqualityChecks(loggingEnabled) {
-			const logger = construct({ target: Logger, args: arrayWrap(loggingEnabled) })
+			const logger = construct({
+				target: Logger,
+				args: arrayWrap(loggingEnabled),
+			})
 			assert(
 				hasSelfEquality(isThreeHundred),
 				StringValueof("[falsejs] IsThreeHundred has no self equality"),
@@ -1365,9 +1374,8 @@ if (isComputerOnFire()) {
 				.ensure(n0p3)
 				.end()
 			return {
-				
 				result,
-				
+
 				succeededAttempt,
 			} // return our false value
 		}
@@ -1630,7 +1638,7 @@ if (isComputerOnFire()) {
                      )
                    )*/
 				})
-				/*
+			/*
 			If(isIsOdd(isOddNum))
 				.Then(() => {
 					logger.log(pc.green(`[falsejs] Good for prasundas`))
@@ -1931,7 +1939,6 @@ if (isComputerOnFire()) {
 				})
 				const nullValue = Null()
 
-				
 				if (result == zeroValue) {
 					// biome-ignore lint/suspicious/noTsIgnore: reason blabal
 					// @ts-ignore
@@ -2189,7 +2196,7 @@ if (isComputerOnFire()) {
 						.concat(SPACE)
 						.concat(emoji100),
 				)
-				
+
 				if (succeededAttempt != null) {
 					ltc(
 						concat(
@@ -2242,7 +2249,6 @@ if (isComputerOnFire()) {
 							numberFormatter.format(
 								MathRound(
 									surpriseArray.reduce((v, _, i, a) => {
-										
 										return jQuery.add(v, a.getMember(i))
 									}),
 								),
@@ -2364,8 +2370,8 @@ if (isComputerOnFire()) {
 				)
 				ltc(
 					clc.cyanBright(
-						`[falsejs] Using Lodash inside Kitty version ${k.VERSION}`
-					)
+						`[falsejs] Using Lodash inside Kitty version ${k.VERSION}`,
+					),
 				)
 				ltc(clc.cyanBright(`[falsejs] Using Axios version ${axios.VERSION}`))
 				ltc(clc.cyanBright(`[falsejs] Using React version ${React.version}`))
@@ -2515,7 +2521,7 @@ if (isComputerOnFire()) {
 					}),
 				],
 			}).compare()
-			
+
 			const value = $.divide(add(mappedValue, biasedRandomValue), Two())
 
 			return value >= five() / five() / (five() / five() + five() / five())
@@ -2545,9 +2551,7 @@ if (isComputerOnFire()) {
 			// Calculate a hash-like value using trigonometric functions
 			const trigValue =
 				parseFloat(
-					
 					parseFloat(
-						
 						add("0.", baseConverted),
 					) *
 						(five() + (five() / five() + five() / five())) *
@@ -2804,10 +2808,24 @@ if (isComputerOnFire()) {
 				isEqualTo(v, garbage),
 			)
 			const cond =
-			  logicalNot(isgarbage) &&
-        logicalNot(isWDS(v)) && 
-        logicalNot(checkOdd(v, { throwOnNonNumber: FALSE, throwOnNonInteger: FALSE, allowNumberStrings: FALSE, enableDebug: FALSE })) &&
-        logicalNot(checkEven(v, { throwOnNonNumber: FALSE, throwOnNonInteger: FALSE, allowNumberStrings: FALSE, enableDebug: FALSE })) &&
+				logicalNot(isgarbage) &&
+				logicalNot(isWDS(v)) &&
+				logicalNot(
+					checkOdd(v, {
+						throwOnNonNumber: FALSE,
+						throwOnNonInteger: FALSE,
+						allowNumberStrings: FALSE,
+						enableDebug: FALSE,
+					}),
+				) &&
+				logicalNot(
+					checkEven(v, {
+						throwOnNonNumber: FALSE,
+						throwOnNonInteger: FALSE,
+						allowNumberStrings: FALSE,
+						enableDebug: FALSE,
+					}),
+				) &&
 				notStrictlyEqual(v, one) &&
 				notStrictlyEqual(v, Two()) &&
 				notStrictlyEqual(v, three()) &&
@@ -2892,9 +2910,9 @@ if (isComputerOnFire()) {
 
 		variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
 			// Inject into jQuery
-			
+
 			jQuery.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
-			
+
 			jQuery.isFalse = variableHolder._FalseJSIsFalse
 		}
 

@@ -37,7 +37,7 @@ import falsejs from "@falsejs/falsejs"
 
 `falsejs.False` is a function that calculates the boolean value false and returns it. It takes three arguments.
 
-```
+```ts
 function False(
   loggingEnabled?: "yes" | "no",
   shouldDoSomethingAsync?: "yes" | "no",
@@ -108,19 +108,19 @@ console.log(falsejs.isFalse("hi")) // false
 
 NPM:
 
-```
+```bash
 npm install -g @falsejs/falsejs
 ```
 
 Yarn:
 
-```
+```bash
 yarn add -g @falsejs/falsejs
 ```
 
 PNPM:
 
-```
+```bash
 pnpm add -g @falsejs/falsejs
 ```
 
