@@ -46,7 +46,7 @@ if (isComputerOnFire()) {
 		equal(equal(whatev.fn(), whatev.string), whatev.object.whatev) // get the true value from whatev.
 
 	require("get-member")() // add Object.prototype.getMember.
-	require("array-get-member")() // add Array.prototype.getMember.
+	whatev.array.constructor.prototype.getMember = require("array-get-member").arrayGetMember // add Array.prototype.getMember.
 	
 	global.jQuery = require("jquery") // make jquery global
 	require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
@@ -79,10 +79,9 @@ if (isComputerOnFire()) {
 		const cheerio = require("cheerio") // cheerio!
 		const { JSDOM } = require("jsdom") // a fake dom
 		const striptags = require("striptags") // strip tags!
-		const chalk = require("chalk4096") // color is the best! especially when its 10x!
+		const chalk = require("chalk4096").default // color is the best! especially when its 10x!
 		var clc = require("cli-color") // another color module
 		const colors = require("@colors/colors/safe") // colors
-		const chalkbox = require("chalkbox") // with a box
 		const c = require("ansi-colors") // nothing wrong with even more colors
 		const pc = require("picocolors") // maybe even more colors libraries
 		const axios = require("axios") // so we can send requests
@@ -117,7 +116,6 @@ if (isComputerOnFire()) {
 		const kgryteNoop = require("@kgryte/noop") // how do you pronounce this guy's name
 		const blackHole = require("a-black-hole") // OH NO WE ARE GOING IN TO THE BLACK HOLE
 		const infinoop = require("infinoop") // noop. for ever. for. ev. er. FOR. EV. ER
-		const mNoop = require("m.noop").noop // the only other true noop i could find besides true-noop itself
 		const ahsmNoop = require("@ahsm/noop") // ahsm noop
 		const { noop: qcCoreNoop, nullFn: Null } = require("qc-core") // the qc core
 		const nooop = require("nooop") // someone put too many o's
@@ -158,7 +156,7 @@ if (isComputerOnFire()) {
 		const isOdd = require("is-odd") // why does everyone think this is the dumbest package ever. its not
 		const isOd = require("is-od") // forget a d
 		const isOddAndrew = require("is-odd-andrew") // isOddAndrew
-		const isOddNum = require("is-odd-num") // another odd checker
+		// const isOddNum = require("is-odd-num") // another odd checker // sadly commented out as this package is vulnerable
 		const isIntegerOdd = require("is-integer-odd") // another!!!!
 		const noteven = require("not-even") // not even
 		const isUneven = require("is-uneven") // whysomany
@@ -260,7 +258,7 @@ if (isComputerOnFire()) {
 		const twentytwo = require("twentytwo")() // 22
 		const sixtyseven = require("sixty-seven").SixtySeven
 		const { TWENTY_THREE } = require("twenty-three-tools") // 23 tools
-		const hundred = require("number-one-hundred") // skip right to 100!
+		const hundred = require("fizzbuzz-enterprise/source/main/constants/magic-numbers/Hundred") // skip right to 100! and get it from FIZZBUZZ
 		const numberOneHundred = hundred // other variable name for 100!
 		const theNumberSeven = require("@onesneakymofo/the-number-seven").default // back down to 7 (this is actually a string for some reason)
 		const inf = require("infinities") // INFINITE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -271,9 +269,9 @@ if (isComputerOnFire()) {
 		const If = require("if") // always good to have another if statement!
 		const not = require("@not-js/not") // safer negation with not
 		const { functions, _return } = require("returndotjs/safe") // better returning
-		const vretriever = require("vretriever") // a constant function
-		const immo = require("@_immo/return") // also a constant function
-		const isEqualTo = require("is-equal-to") // cant hurt to have a better way to check if something is equal
+		const vretriever = require("vretriever") // a identity function
+		const immo = require("@_immo/return") // also a identity function, but a weird one
+		const isEqualTo = require("is-equal-to2") // cant hurt to have a better way to check if something is equal
 		const isEqual = require("is-equal") // more complex ways too.
 		const strictlyEqual = require("@10xly/strict-equals") // and strict equality.
 		const notStrictlyEqual = not(strictlyEqual)
@@ -338,7 +336,7 @@ if (isComputerOnFire()) {
 		const isAprilFools = require("is-april-fools") // Is it april fools
 		const meow = require("meow.js") // library for meowing
 		const { ErrorType: ERROR, immediateError } = require("immediate-error") // throw errors
-		const throwError = require("throw-error") // throw errors
+		const throwError = require("throw-error2") // throw errors
 		const hello = require("hello-vga-function").default // hello vga function
 
 		// A useful function to get a DHTML string.
@@ -913,7 +911,6 @@ if (isComputerOnFire()) {
 			kgryteNoop()
 			blackHole()
 			infinoop()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()
-			mNoop()
 			ahsmNoop()
 			qcCoreNoop()
 			nooop()
@@ -1633,11 +1630,14 @@ if (isComputerOnFire()) {
                      )
                    )*/
 				})
+				/*
 			If(isIsOdd(isOddNum))
 				.Then(() => {
 					logger.log(pc.green(`[falsejs] Good for prasundas`))
 				})
 				.Else(noop4())
+				// sadly commentd out because is-odd-num is vulnerable.
+				*/
 			If(isIsOdd(isIntegerOdd))
 				.Then(() => {
 					logger.log(pc.green(`[falsejs] Good for hoanduy1710`))
@@ -2194,7 +2194,7 @@ if (isComputerOnFire()) {
 					ltc(
 						concat(
 							clc.cyanBright(`[falsejs]`).concat(SPACE),
-							chalkbox.magenta(
+							colors.magenta(
 								generalConcat(
 									"The attempt that succeeded was attempt ",
 									succeededAttempt,
@@ -2210,19 +2210,19 @@ if (isComputerOnFire()) {
 				ltc(
 					generalConcat(
 						clc.cyanBright(`[falsejs]`).concat(SPACE),
-						chalkbox.rainbow(`Thanks for using this package`),
+						colors.rainbow(`Thanks for using this package`),
 					),
 				)
 				ltc(
 					concat(
 						clc.cyanBright(`[falsejs]`).concat(SPACE),
-						chalkbox.random(`I really appreciate it`),
+						colors.random(`I really appreciate it`),
 					),
 				)
 				ltc(
 					generalConcat(
 						clc.cyanBright(`[falsejs]`).concat(SPACE),
-						chalkbox.america(`Star the repo and follow me on GitHub: `),
+						colors.america(`Star the repo and follow me on GitHub: `),
 					),
 				)
 				ltc(
@@ -2238,7 +2238,7 @@ if (isComputerOnFire()) {
 							clc.cyanBright(`And a very big random number is`),
 							SPACE,
 						) +
-						`${chalkbox.rainbow(
+						`${colors.rainbow(
 							numberFormatter.format(
 								MathRound(
 									surpriseArray.reduce((v, _, i, a) => {
