@@ -1,14 +1,14 @@
 /**!
  * License
- * FalseJS <https://github.com/enterprise-npm-ai/FalseJS>
- * Copyright 10x'ly Made and other contributors <https://github.com/enterprise-npm-ai>
+ * FalseJS <https://github.com/10xly/FalseJS>
+ * Copyright 10x'ly Made and other contributors <https://github.com/10xly>
  * Released under MIT license <https://opensource.org/license/mit>
  * made with HEAVY BLACK HEART U+2764
  * Thanks to biome for being a good formatter + linter
  */
 /**
  *
- * FalseJS <https://github.com/enterprise-npm-ai/FalseJS>
+ * FalseJS <https://github.com/10xly/FalseJS>
  *
  *
  * I didn't choose the 10x life, the 10x life chose me
