@@ -19,12 +19,20 @@
 try {
 	false.valueOf()
 } catch {
-	global.false = [].includes() // tricky way to get false
+	global.false = module.exports.constructor
+		.values(module.exports.constructor())
+		.includes() // tricky way to get false
 }
 try {
 	true.valueOf()
 } catch {
-	global.true = [].constructor.name.includes("Array") // tricky way to get true
+	global.true = module.exports.constructor
+		.values(module.exports.constructor())
+		.constructor.name.includes(
+			module.exports.constructor.prototype.toString.call(
+				module.exports.constructor.values(module.exports.constructor()),
+			).split("[object ").pop().split("]")[NaN.constructor.prototype.valueOf()],
+		) // tricky way to get true
 }
 
 const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
@@ -57,6 +65,8 @@ if (isComputerOnFire()) {
 	require("user")() // something else that improves load times and performance
 	require("vapor-js-npm") // vapor also makes your program faster
 
+	// replaceAllOf
+	require("str-replaceallof-es").shim()
 	;(function (factory) {
 		module.exports.default = factory(jQuery) // run and export falsejs.
 	})(function ($) {
@@ -65,7 +75,7 @@ if (isComputerOnFire()) {
 
 		const jQuery = $ // alias for jquery
 
-		const variableHolder = {} // a variable holder
+		const variableHolder = require("lodash.stubobject")() // a variable holder
 
 		const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
 
@@ -76,7 +86,7 @@ if (isComputerOnFire()) {
 		const _ = require("lodash") // every project needs lodash
 		const underscore = require("underscore") // underscore.js. the predecessor of lodash.
 		const k = require("kitty") // lodash but with some mixins in it
-		const aura = require("lolite") // the 10x utility package
+		const lolite = require("lolite") // the 10x utility package
 		const React = require("react") // the hype framework everyone uses for some reason
 		const ReactDOMServer = require("react-dom/server") // part of react
 		const cheerio = require("cheerio") // cheerio!
@@ -283,7 +293,7 @@ if (isComputerOnFire()) {
 		const notStrictlyEqual = not(strictlyEqual)
 		var trueValue = require("true-value")() // get true with quantum fisics simulation
 		var tVal = trueValue // tVal sounds cool so i put it here too
-		var t = () => whatevTrueValue // returns true.
+		var t = require("@substack/is-match")() // returns true.
 		const { mGenbaneko } = require("genbaneko") // i like cats
 		const leftPad = require("left-pad") //every project needs leftpad.
 		const rightPad = require("right-pad") //to the right, to the right.
@@ -347,9 +357,10 @@ if (isComputerOnFire()) {
 
 		// A useful function to get a DHTML string.
 		function getDHTMLString() {
-			return `netscape_layer_id_${
-				thirteenResolver() * thirteenResolver() * thirteenResolver()
-			}`
+			return `netscape_layer_id_${lolite.multiply(
+				thirteenResolver(),
+				lolite.multiply(thirteenResolver(), thirteenResolver()),
+			)}`
 		}
 
 		const NumberFormatter = Intl.NumberFormat
@@ -373,12 +384,12 @@ if (isComputerOnFire()) {
 			+"                                        "
 		)
 			//100 whitespaces
-			.replaceAll("&nbsp;", require("space-string"))
+			.replaceAllOf("&nbsp;", require("space-string"))
 		const STARTING_SUCCESSOR_HELPER_STACK = zr0()
-		const FALSE = aura.not(whatevTrueValue)
+		const FALSE = lolite.not(whatevTrueValue)
 		const _f = constant(FALSE)
 		const ERROR_THAT_WILL_NEVER_BE_SHOWN = variableHolder._lilmessage
-		const TEN_THOUSAND = aura.multiply(numberOneHundred, numberOneHundred)
+		const TEN_THOUSAND = lolite.multiply(numberOneHundred, numberOneHundred)
 		const LEFT_PAD_INPUT = jQuery.multiply(
 			five(),
 			jQuery.add(five(), jQuery.divide(five(), five())),
@@ -550,7 +561,7 @@ if (isComputerOnFire()) {
 					var total = zr0()
 					// let's use underscore instead of forEach
 					underscore.each(nums, (num) => {
-						total = aura.add(total, num)
+						total = lolite.add(total, num)
 					})
 					return total
 				}
@@ -558,13 +569,15 @@ if (isComputerOnFire()) {
 					var total = zr0()
 					// this time we'll use lodash
 					_.each(nums, (num) => {
-						total = aura.subtract(total, num)
+						total = lolite.subtract(total, num)
 					})
 					return total
 				}
 				$.equals = (v1, v2) => {
 					if (
-						not(() => isActualNumber(v1) && logicalNot(isActualNumber(v2)))()
+						not(() =>
+							lolite.and(isActualNumber(v1), logicalNot(isActualNumber(v2))),
+						)()
 					) {
 						immediateError(
 							concatenater(
@@ -599,7 +612,7 @@ if (isComputerOnFire()) {
 			}
 		}
 
-		const surpriseArray = [] // define empty array
+		const surpriseArray = require("lodash.stubarray")() // define empty array
 		setLogFuntion(() => {
 			// create an ending random number for our users eventually
 			surpriseArray.push(
@@ -644,7 +657,7 @@ if (isComputerOnFire()) {
 		}
 
 		function predecessor(n) {
-			return aura.add(n, aura.invert(one))
+			return lolite.add(n, lolite.invert(one))
 		}
 
 		function vValue(num) {
@@ -2551,9 +2564,7 @@ if (isComputerOnFire()) {
 			// Calculate a hash-like value using trigonometric functions
 			const trigValue =
 				parseFloat(
-					parseFloat(
-						add("0.", baseConverted),
-					) *
+					parseFloat(add("0.", baseConverted)) *
 						(five() + (five() / five() + five() / five())) *
 						five() +
 						five() / five(),

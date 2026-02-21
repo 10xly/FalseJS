@@ -1,6 +1,6 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "4.1.7",
+	"version": "4.1.8",
 	"description": "Returns false.",
 	"main": "index.js",
 	"scripts": {
@@ -175,9 +175,11 @@
 		"lodash._noop": "^2.2.1",
 		"lodash.constant": "^3.0.0",
 		"lodash.noop": "^3.0.1",
+		"lodash.stubarray": "^4.13.0",
+		"lodash.stubobject": "^4.13.0",
 		"logtoconsole": "^1.0.7",
 		"lolcatjs": "^2.4.3",
-		"lolite": "^1.1.15",
+		"lolite": "^1.1.24",
 		"lua-interpreter": "^0.0.3",
 		"luaparse": "^0.3.1",
 		"meow.js": "^1.0.6",
@@ -233,6 +235,7 @@
 		"sixteen-constant": "^1.0.0",
 		"sixty-seven": "^1.0.0",
 		"space-string": "^1.0.0",
+		"str-replaceallof-es": "^1.0.0",
 		"striptags": "^3.2.0",
 		"successor": "^1.0.1",
 		"the-number-one": "^1.0.1",
