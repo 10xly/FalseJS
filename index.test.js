@@ -83,4 +83,4 @@ function doTests(testName, fjs) {
 		.end()
 }
 
-doTests("FalseJS Library Tests", require("./index").default)
+doTests("tests", require("./index").default)

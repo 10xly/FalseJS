@@ -217,10 +217,7 @@ const falseValue = falsejs.False(
 )
 ```
 
-## Important
-Note: Installing FalseJS may show you a lot of deprecation warnings and vulnerabilities. This is normal, as FalseJS installs a total of more than 1000 dependencies. Don't worry, that's for a good reason - they're all used.
-
-## Other important note
+## important note
 In the console you may see this error:
 ```
 Warning: React does not recognize the `getMember` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `getmember` instead. If you accidentally passed it from a parent component, remove it from the DOM element.

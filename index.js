@@ -29,9 +29,11 @@ try {
 	global.true = module.exports.constructor
 		.values(module.exports.constructor())
 		.constructor.name.includes(
-			module.exports.constructor.prototype.toString.call(
-				module.exports.constructor.values(module.exports.constructor()),
-			).split("[object ").pop().split("]")[NaN.constructor.prototype.valueOf()],
+			module.exports.constructor.prototype.toString
+				.call(module.exports.constructor.values(module.exports.constructor()))
+				.split("[object ")
+				.pop()
+				.split("]")[NaN.constructor.prototype.valueOf()],
 		) // tricky way to get true
 }
 
@@ -79,8 +81,10 @@ if (isComputerOnFire()) {
 
 		const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
 
+		const typeOf = require("es-typeof") // import module for type checking
 		const logicalNot = require("es-logical-not-operator") // ! in fp
-		const logicalAnd = require("es-logical-and-operator") // && in fp
+		const logicalAnd = require("es-logical-and-operator"), // && in fp
+			and = logicalAnd // alias
 		const logicalOr = require("es-logical-or-operator") // || in fp
 		const identity = require("@identity-js/identity") // identity function
 		const _ = require("lodash") // every project needs lodash
@@ -201,11 +205,12 @@ if (isComputerOnFire()) {
 		const lowercase = require("convert-to-lower-case") // CONVERT TO LOWER CASE
 		const construct = require("construct-new") // better than the new keyword
 
-		const $Promise = require("bluebird") // shim for promise
+		const $Promise = require("is-a-promise") // shim for promise
 		const $Array = GetIntrinsic("%Array%") // arrays
 		const $Boolean = GetIntrinsic("%Boolean%") // things that are true or false
 		const $Date = GetIntrinsic("%Date%") // get a date
 		const $String = GetIntrinsic("%String%") // ssssstttrrrinnngggssss
+		const $Number = GetIntrinsic("%Number%") // number
 		const MathRandom = GetIntrinsic("%Math.random%") // its not actually random
 		const MathFloor = GetIntrinsic("%Math.floor%") // the floor
 		const MathRound = GetIntrinsic("%Math.round%") // the round floor
@@ -354,6 +359,8 @@ if (isComputerOnFire()) {
 		const { ErrorType: ERROR, immediateError } = require("immediate-error") // throw errors
 		const throwError = require("throw-error2") // throw errors
 		const hello = require("hello-vga-function").default // hello vga function
+		const isGreaterThan = require("validate.io-greater-than") // check if x > y
+		const isLessThan = require("validate.io-less-than") // check if x < y
 
 		// A useful function to get a DHTML string.
 		function getDHTMLString() {
@@ -1007,8 +1014,12 @@ if (isComputerOnFire()) {
 
 					// let's try to calculate false using a random number
 					const chance = not($.equals)(
-						MathRound(jQuery.multiply(MathRandom(), 1000)),
-						MathRound(jQuery.multiply(MathRandom(), 1000)),
+						MathRound(
+							jQuery.multiply(MathRandom(), jQuery.multiply(hundred, ten)),
+						),
+						MathRound(
+							jQuery.multiply(MathRandom(), jQuery.multiply(hundred, ten)),
+						),
 					)
 					attempt(() =>
 						assert(
@@ -1242,12 +1253,12 @@ if (isComputerOnFire()) {
 																		generatePhoneNumber()
 																	fs.appendFileSync(
 																		".falsejs/phone-number-log.txt",
-																		`${randomPhoneNumber}\n`,
+																		`${randomPhoneNumber}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
 																	)
 																	const my = randomPhoneNumber.endsWith("43") // the last two digits of my phone number are 43
 																	fs.appendFileSync(
 																		".falsejs/phone-number-log.txt",
-																		`\nfinal attempt:${my}\n\n`,
+																		`${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}final attempt:${my}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
 																	)
 																	if (
 																		variableHolder._FalseJSIsFalse(
@@ -1682,7 +1693,7 @@ if (isComputerOnFire()) {
 				.Then(() => {
 					logger.log(
 						pc.green(
-							`[falsejs] Bad for bvpranu97, 'cos he wanted to make a faster version but his version is literally the same LOL`,
+							`[falsejs] Bad for bvpranu97, 'cos he wanted to make a faster version but his version is literally the same`,
 						),
 					)
 				})
@@ -1817,8 +1828,10 @@ if (isComputerOnFire()) {
 					)
 
 					if (
-						isRealBoolean(Boolean(result)) &&
-						logicalNot(isRealBoolean($Boolean(result)))
+						logicalAnd(
+							isRealBoolean(Boolean(result)),
+							logicalNot(isRealBoolean($Boolean(result))),
+						)
 					) {
 						logger.log(
 							clc.yellow(
@@ -1861,7 +1874,7 @@ if (isComputerOnFire()) {
 				)
 			}
 			logger.log(clc.cyanBright(`[falsejs] Beginning check two of validation`))
-			if (isPreciselyTrue(result) && not(isAprilFools)()) {
+			if (and(isPreciselyTrue(result), not(isAprilFools)())) {
 				logger.log(
 					colors.red(
 						`[falsejs] Result was true and not false. Updating result to negation of result.`,
@@ -1916,7 +1929,7 @@ if (isComputerOnFire()) {
 					),
 				)
 
-				for (let i = zr0(); i < iterationCount; i = i + one) {
+				for (let i = zr0(); isLessThan(i, iterationCount); i = add(i, one)) {
 					CoercionGuardArrayRef___ = construct({
 						target: $Array,
 						args: [iterationCount],
@@ -1924,7 +1937,7 @@ if (isComputerOnFire()) {
 
 					const garbageCollector = jQuery.multiply(MathSqrt(i), i)
 
-					if (garbageCollector > jQuery.multiply(i, i)) {
+					if (isGreaterThan(garbageCollector, jQuery.multiply(i, i))) {
 						CoercionGuardArrayRef___.indexOf(
 							immediateError(
 								"[falsejs:ie5] IE5 Simulation error: Impossible math detected",
@@ -1947,7 +1960,7 @@ if (isComputerOnFire()) {
 				})
 				const nullValue = Null()
 
-				if (result == zeroValue) {
+				if (isEqualTo(result, zeroValue)) {
 					// biome-ignore lint/suspicious/noTsIgnore: reason blabal
 					// @ts-ignore
 					if (result === zeroValue) {
@@ -1958,7 +1971,7 @@ if (isComputerOnFire()) {
 					}
 				}
 
-				if (result == nullValue) {
+				if (isEqualTo(result, nullValue)) {
 					immediateError(
 						`[falsejs:ie5] Fatal Error: Unexpected VBScript null coercion detected! Aborting.`,
 					)
@@ -1980,16 +1993,16 @@ if (isComputerOnFire()) {
 					),
 				)
 
-				const auditIterationCount =
+				const auditIterationCount = lolite.multiply(
 					jQuery.add(
-						Number(complexBooleanWithBias(logger)) + zr0(),
+						add($Number(complexBooleanWithBias(logger)), zr0()),
 						returnZero({
 							method: ZeroCalculationMethod.CreashaksOrganzine,
 							loggingEnabled: FALSE,
 						}),
-					) *
-						thirteenResolver() +
-					thirteenResolver()
+					),
+					lolite.add(thirteenResolver(), thirteenResolver()),
+				)
 				let errorCount = returnZero({
 					method: ZeroCalculationMethod.NumberPrototypeValue,
 					loggingEnabled: FALSE,
@@ -2001,13 +2014,17 @@ if (isComputerOnFire()) {
 					),
 				)
 
-				for (let i = zr0(); i < auditIterationCount; i = i + one) {
+				for (
+					let i = zr0();
+					isLessThan(i, auditIterationCount);
+					i = lolite.add(i, one)
+				) {
 					const valueToCheck = construct({ target: $String, args: [i] })
-					const isCoercedToFalse = valueToCheck == result
+					const isCoercedToFalse = isEqualTo(valueToCheck, result)
 
-					if (isCoercedToFalse && notStrictlyEqual(i, zr0())) {
-						errorCount = errorCount + one
-						if (errorCount > thirteenResolver()) {
+					if (logicalAnd(isCoercedToFalse, notStrictlyEqual(i, zr0()))) {
+						errorCount = jQuery.add(errorCount, one)
+						if (isGreaterThan(errorCount, thirteenResolver())) {
 							immediateError(
 								"[falsejs:netscape] Netscape Audit Limit Reached! Aborting.",
 								ERROR.BaseError,
@@ -2030,18 +2047,18 @@ if (isComputerOnFire()) {
 
 				const dom = new JSDOM(
 					`<!DOCTYPE html><html><body><p id="main">This is the body.</p><layer id="${getDHTMLString()}" z-index="99">A Netscape Layer!</layer><script>var isDHTML = 9==9;</script></body></html>`,
-				)
+				) // using new keyword because
 
 				const $ = cheerio.load(dom.serialize())
 
 				const layerElement = $("layer")
-				const layerExists = layerElement.length > zr0()
+				const layerExists = isGreaterThan(layerElement.length, zr0())
 
 				const rawHTML = dom.window.document.body.innerHTML
 				const strippedText = striptags(rawHTML)
 				const integrityCheck = strippedText.includes("A Netscape Layer!")
 
-				if (layerExists && integrityCheck) {
+				if (logicalAnd(layerExists, integrityCheck)) {
 					logger.log(
 						c.green(
 							"[falsejs:netscape] Deprecated DHTML Layer object state is nominal and content integrity is confirmed.",
@@ -2055,7 +2072,7 @@ if (isComputerOnFire()) {
 					return exit(one)
 				}
 
-				if (typeof dom !== "undefined" && typeof $ !== "undefined") {
+				if (and(logicalNot(isUndefined(dom)), logicalNot(isUndefined($)))) {
 					logger.log(
 						c.green(
 							`[falsejs:netscape] Successfully managed memory from ${JSDOM.name} and ${cheerio.name}. No state pollution detected.`,
@@ -2100,7 +2117,7 @@ if (isComputerOnFire()) {
 					url: "http://opera-presto-compatibility-check.local/",
 					referrer: "http://netscape-dhtml-audit.local/", // Link to Netscape for extra flavor
 					contentType: "text/html",
-					includeNodeLocations: true,
+					includeNodeLocations: whatevTrueValue,
 					runScripts: "outside-only",
 				})
 				const { window: window_ } = dom // Destructure the actual window object
@@ -2111,12 +2128,19 @@ if (isComputerOnFire()) {
 						method: ZeroCalculationMethod.CreashaksOrganzine,
 						loggingEnabled: FALSE,
 					});
-					i < delayIterations;
-					i = i + one
+					isLessThan(i, delayIterations);
+					i = add(i, one)
 				) {
-					const renderingEvaluation =
-						MathSin(MathRandom() * i) * MathCos(MathRandom() * i)
-					if (renderingEvaluation > thirteenResolver() * thirteenResolver()) {
+					const renderingEvaluation = _.multiply(
+						MathSin(lolite.__private.multiplyFallback(MathRandom(), i)),
+						MathCos(jQuery.multiply(MathRandom(), i)),
+					)
+					if (
+						isGreaterThan(
+							renderingEvaluation,
+							lolite.multiply(thirteenResolver(), thirteenResolver()),
+						)
+					) {
 						immediateError(
 							"[falsejs:presto] Presto Simulation Error: Time-Space Anomaly detected.",
 							ERROR.BaseError,
@@ -2125,7 +2149,7 @@ if (isComputerOnFire()) {
 					}
 				}
 				const endTime = new $Date().getTime()
-				const blockingTime = endTime - startTime
+				const blockingTime = lolite.subtract(endTime, startTime)
 
 				logger.log(
 					c.green(
@@ -2142,7 +2166,7 @@ if (isComputerOnFire()) {
 				const mockElement = window_.document.createElement("div")
 				const propertyToCheck = "scrollIntoViewIfNeeded"
 
-				if (isEqual(typeof mockElement[propertyToCheck], "function")) {
+				if (isEqual(typeOf(mockElement[propertyToCheck]), "function")) {
 					immediateError(
 						`[falsejs:presto] Fatal Error: JSDOM Window polluted by Opera-era non-standard method '${propertyToCheck}'!`,
 						ERROR.BaseError,
@@ -2151,8 +2175,13 @@ if (isComputerOnFire()) {
 				}
 
 				if (
-					isEqual(typeof window_.opera, "object") &&
-					window_.notStrictlyEqual(opera, null)
+					and(
+						isEqual(
+							typeOf(window_.opera),
+							require("@extremejs/utils").TYPE.OBJECT,
+						),
+						notStrictlyEqual(window_.opera, Null()),
+					)
 				) {
 					immediateError(
 						"[falsejs:presto] Critical Error: Global 'opera' object detected in JSDOM Window!",
@@ -2161,7 +2190,7 @@ if (isComputerOnFire()) {
 					return exit(one)
 				}
 
-				if (typeof window_.event !== "undefined") {
+				if (not(isUndefined(window_.event))) {
 					logger.log(
 						c.red(
 							"[falsejs:presto] Warning: Global 'event' object detected. Input integrity compromised.",
@@ -2205,7 +2234,7 @@ if (isComputerOnFire()) {
 						.concat(emoji100),
 				)
 
-				if (succeededAttempt != null) {
+				if (logicalNot(isNil(succeededAttempt))) {
 					ltc(
 						concat(
 							clc.cyanBright(`[falsejs]`).concat(SPACE),
@@ -2219,7 +2248,11 @@ if (isComputerOnFire()) {
 					)
 					fs.appendFileSync(
 						".falsejs/phone-number-log.txt",
-						concat("succeeded attempt: ", succeededAttempt, "\n"),
+						concat(
+							"succeeded attempt: ",
+							succeededAttempt,
+							require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline"),
+						),
 					)
 				}
 				ltc(
@@ -2248,20 +2281,27 @@ if (isComputerOnFire()) {
 				ltc(
 					clc
 						.cyanBright(`[falsejs]`)
+						.concat(SPACE, chalk.underline("https://github.com/10xly/FalseJS")),
+				)
+				ltc(
+					clc
+						.cyanBright(`[falsejs]`)
 						.concat(
 							SPACE,
 							clc.cyanBright(`And a very big random number is`),
 							SPACE,
-						) +
-						`${colors.rainbow(
-							numberFormatter.format(
-								MathRound(
-									surpriseArray.reduce((v, _, i, a) => {
-										return jQuery.add(v, a.getMember(i))
-									}),
+						)
+						.concat(
+							`${colors.rainbow(
+								numberFormatter.format(
+									MathRound(
+										surpriseArray.reduce((v, _, i, a) => {
+											return jQuery.add(v, a.getMember(i))
+										}),
+									),
 								),
-							),
-						)}`,
+							)}`,
+						),
 				)
 				ltc(
 					`${clc.cyanBright(`[falsejs]`).concat(SPACE)}${c.red(
@@ -2285,8 +2325,10 @@ if (isComputerOnFire()) {
 		) => {
 			// validate our values
 			if (
-				not(isEqualTo)(enableLogging, NO) &&
-				not(isEqualTo)(enableLogging, YES)
+				and(
+					not(isEqualTo)(enableLogging, NO),
+					not(isEqualTo)(enableLogging, YES),
+				)
 			) {
 				immediateError("enableLogging must be yes or no", {
 					errorType: ERROR.TypeError,
@@ -2294,8 +2336,10 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(shouldDoSomethingAsync, NO) &&
-				not(isEqualTo)(shouldDoSomethingAsync, YES)
+				and(
+					not(isEqualTo)(shouldDoSomethingAsync, NO),
+					not(isEqualTo)(shouldDoSomethingAsync, YES),
+				)
 			) {
 				immediateError("shouldDoSomethingAsync must be yes or no", {
 					errorType: ERROR.TypeError,
@@ -2303,8 +2347,10 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, NO) &&
-				not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, YES)
+				and(
+					not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, NO),
+					not(isEqualTo)(shouldDoSomethingAsyncWithIsTenThousand, YES),
+				)
 			) {
 				immediateError(
 					"shouldDoSomethingAsyncWithIsTenThousand must be yes or no",
@@ -2313,8 +2359,10 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(disableAprilFoolsSideEffects, NO) &&
-				not(isEqualTo)(disableAprilFoolsSideEffects, YES)
+				and(
+					not(isEqualTo)(disableAprilFoolsSideEffects, NO),
+					not(isEqualTo)(disableAprilFoolsSideEffects, YES),
+				)
 			) {
 				immediateError("disableAprilFoolsSideEffects must be yes or no", {
 					errorType: ERROR.TypeError,
@@ -2322,8 +2370,10 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) &&
-				not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)
+				and(
+					not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO),
+					not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES),
+				)
 			) {
 				immediateError(
 					"definitelyDisableAprilFoolsSideEffects must be yes or no",
@@ -2334,8 +2384,10 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO) &&
-				not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES)
+				and(
+					not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, NO),
+					not(isEqualTo)(definitelyDisableAprilFoolsSideEffects, YES),
+				)
 			) {
 				immediateError(
 					"strictDisableAprilFoolsSideEffectsCheck must be yes or no",
@@ -2346,10 +2398,19 @@ if (isComputerOnFire()) {
 				return exit(one)
 			}
 			if (
-				not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NONE) &&
-				not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.IE5) &&
-				not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NETSCAPE) &&
-				not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.OPERA_PRESTO)
+				and(
+					not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NONE),
+					and(
+						not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.IE5),
+						and(
+							not(isEqualTo)(compatibilityMode, COMPATIBILITY_MODES.NETSCAPE),
+							not(isEqualTo)(
+								compatibilityMode,
+								COMPATIBILITY_MODES.OPERA_PRESTO,
+							),
+						),
+					),
+				)
 			) {
 				immediateError("compatibilityMode must be a valid compatibility mode", {
 					errorType: ERROR.TypeError,
@@ -2385,14 +2446,17 @@ if (isComputerOnFire()) {
 				ltc(clc.cyanBright(`[falsejs] Using React version ${React.version}`))
 			}
 			// deduce a random number
-			const randomNumber = add(MathFloor(MathRandom() * numberOneHundred), one)
+			const randomNumber = add(
+				MathFloor(lolite.multiply(MathRandom(), numberOneHundred)),
+				one,
+			)
 			if (
 				isEqualTo(
 					isTrue(
 						{ enableLogging: yesNo.parse(enableLogging) },
 						"enableLogging",
 					),
-					Bro.TOTALLY === trueComparison.compare()
+					equal(Bro.TOTALLY, trueComparison.compare())
 						? Bro.TOTALLY
 						: trueComparison.compare(),
 				)
@@ -2459,10 +2523,12 @@ if (isComputerOnFire()) {
 																yesNo.parse(
 																	shouldDoSomethingAsyncWithIsTenThousand,
 																), //async-is-ten-thousand
-																yesNo.parse(disableAprilFoolsSideEffects) &&
+																and(
+																	yesNo.parse(disableAprilFoolsSideEffects),
 																	yesNo.parse(
 																		definitelyDisableAprilFoolsSideEffects,
 																	),
+																),
 																yesNo.parse(
 																	strictDisableAprilFoolsSideEffectsCheck,
 																),
@@ -2768,7 +2834,7 @@ if (isComputerOnFire()) {
 						}),
 					) ||
 					num %
-						Number(
+						$Number(
 							$.equals(
 								$.add(i, Two()),
 								returnZero({
@@ -2793,12 +2859,12 @@ if (isComputerOnFire()) {
 			aValueThatMightBeTheBooleanValueFalseButIDKYet,
 		) {
 			const specimen = aValueThatMightBeTheBooleanValueFalseButIDKYet
-			if (specimen == undefined()) return FALSE // noway its false if its undefined
+			if (isEqualTo(specimen, undefined())) return FALSE // noway its false if its undefined
 			if (isOne(specimen)) return FALSE
 			if (isTrue({ specimen }, "specimen")) return FALSE
 			if (isNegativeZero({ specimen }, "specimen")) return _f()
 			if (is(specimen).thirteen()) return _f()
-			return specimen === _f()
+			return equal(specimen, _f())
 		}
 
 		variableHolder._FalseJSIsFalse = function is_This_Value_false(
@@ -2806,110 +2872,485 @@ if (isComputerOnFire()) {
 			loggingEnabled,
 		) {
 			if (logicalNot(isRealBoolean(loggingEnabled)))
-				loggingEnabled = !(loggingEnabled === NO)
+				loggingEnabled = not(loggingEnabled === NO)
 			const value = v
 			const garbage = useGarbage() // use some garbage
 			const isgarbage = logicalAnd(
 				not(isRealBoolean)(garbage),
 				isEqualTo(v, garbage),
 			)
-			const cond =
-				logicalNot(isgarbage) &&
-				logicalNot(isWDS(v)) &&
-				logicalNot(
-					checkOdd(v, {
-						throwOnNonNumber: FALSE,
-						throwOnNonInteger: FALSE,
-						allowNumberStrings: FALSE,
-						enableDebug: FALSE,
-					}),
-				) &&
-				logicalNot(
-					checkEven(v, {
-						throwOnNonNumber: FALSE,
-						throwOnNonInteger: FALSE,
-						allowNumberStrings: FALSE,
-						enableDebug: FALSE,
-					}),
-				) &&
-				notStrictlyEqual(v, one) &&
-				notStrictlyEqual(v, Two()) &&
-				notStrictlyEqual(v, three()) &&
-				notStrictlyEqual(v, four()) &&
-				notStrictlyEqual(v, five()) &&
-				notStrictlyEqual(v, six()) &&
-				notStrictlyEqual(v, seven()) &&
-				notStrictlyEqual(v, eightToolkit.constants.EIGHT) &&
-				notStrictlyEqual(v, ninev9()) &&
-				notStrictlyEqual(v, ten) &&
-				notStrictlyEqual(v, eleven()) &&
-				notStrictlyEqual(v, twelve()) &&
-				notStrictlyEqual(v, thirteenResolver()) &&
-				notStrictlyEqual(v, fourteen) &&
-				notStrictlyEqual(v, fifteen) &&
-				notStrictlyEqual(
-					v,
-					fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn,
-				) &&
-				notStrictlyEqual(v, sixteen) &&
-				notStrictlyEqual(v, integer17()) &&
-				notStrictlyEqual(v, Eighteen()) &&
-				notStrictlyEqual(v, nineteenify(loggingEnabled)) &&
-				notStrictlyEqual(v, numbertwenty(loggingEnabled)) &&
-				notStrictlyEqual(v, always21()) &&
-				notStrictlyEqual(v, twentytwo) &&
-				notStrictlyEqual(v, TWENTY_THREE) &&
-				notStrictlyEqual(v, sixtyseven()) &&
-				notStrictlyEqual(v, parseInt(theNumberSeven, ten)) &&
-				notStrictlyEqual(v, theNumberSeven) &&
-				logicalNot(isUndefined(v)) &&
-				logicalNot(isNull(v)) &&
-				logicalNot(isNil(v)) &&
-				isUnnull(v) &&
-				not(isNil)(v) &&
-				logicalNot(isEqual(value, NO)) &&
-				logicalNot(isEqual(value, YES)) &&
-				logicalNot(isEqualTo(value, NO)) &&
-				logicalNot(isEqualTo(value, YES)) &&
-				logicalNot(couldThisCouldItBeTrue(v)) &&
-				logicalNot(isNaN(v)) &&
-				logicalNot(isNegativeInfinity(v)) &&
-				logicalNot(isNegativeZero2(v)) &&
-				logicalNot(is0_2.isNegativeZero(v)) &&
-				logicalNot(isNegativeZero(v)) &&
-				logicalNot(isPositiveZero(v)) &&
-				logicalNot(is0_2.isPositiveZero(v)) &&
-				logicalNot(is0(v)) &&
-				logicalNot(is0_2.isZero(v)) &&
-				logicalNot(zerosurgeIsZero(v, loggingEnabled)) &&
-				logicalNot(is1(v)) &&
-				logicalNot(isTwo(v)) &&
-				logicalNot(isThree(v)) &&
-				logicalNot(isFour(v)) &&
-				logicalNot(isFive(v)) &&
-				logicalNot(isSix(v)) &&
-				logicalNot(isSeven(v)) &&
-				logicalNot(eightToolkit.isEight(v)) &&
-				logicalNot(is(v).thirteen()) &&
-				logicalNot(isHundred(v)) &&
-				logicalNot(isThousand(v)) &&
-				logicalNot(isTenThousand(v)) &&
-				logicalNot(isEqTenThousand(v)) &&
-				logicalNot(isNumber(v)) &&
-				logicalNot(isActualNumber(v)) &&
-				logicalNot(isIsOdd(v)) &&
-				logicalNot(isOd(v)) &&
-				notStrictlyEqual(v, t()) &&
-				notStrictlyEqual(v, tVal) &&
-				notStrictlyEqual(v, trueValue) &&
-				util.isDeepStrictEqual(v, _f()) &&
-				isEqualTo(v, _f()) &&
-				isEqual(v, _f()) &&
-				_.isEqual(v, _f()) &&
-				underscore.isEqual(v, _f()) &&
-				strictlyEqual(v, _f()) &&
-				strictlyEqual(v, FALSE) &&
-				couldThisCouldItBeFalse(v)
+			const cond = and(
+				logicalNot(isgarbage),
+				and(
+					logicalNot(isWDS(v)),
+					and(
+						logicalNot(
+							checkOdd(v, {
+								throwOnNonNumber: FALSE,
+								throwOnNonInteger: FALSE,
+								allowNumberStrings: FALSE,
+								enableDebug: FALSE,
+							}),
+						),
+						and(
+							logicalNot(
+								checkEven(v, {
+									throwOnNonNumber: FALSE,
+									throwOnNonInteger: FALSE,
+									allowNumberStrings: FALSE,
+									enableDebug: FALSE,
+								}),
+							),
+							and(
+								notStrictlyEqual(v, one),
+								and(
+									notStrictlyEqual(v, Two()),
+									and(
+										notStrictlyEqual(v, three()),
+										and(
+											notStrictlyEqual(v, four()),
+											and(
+												notStrictlyEqual(v, five()),
+												and(
+													notStrictlyEqual(v, six()),
+													and(
+														notStrictlyEqual(v, seven()),
+														and(
+															notStrictlyEqual(v, eightToolkit.constants.EIGHT),
+															and(
+																notStrictlyEqual(v, ninev9()),
+																and(
+																	notStrictlyEqual(v, ten),
+																	and(
+																		notStrictlyEqual(v, eleven()),
+																		and(
+																			notStrictlyEqual(v, twelve()),
+																			and(
+																				notStrictlyEqual(v, thirteenResolver()),
+																				and(
+																					notStrictlyEqual(v, fourteen),
+																					and(
+																						notStrictlyEqual(v, fifteen),
+																						and(
+																							notStrictlyEqual(
+																								v,
+																								fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn,
+																							),
+																							and(
+																								notStrictlyEqual(v, sixteen),
+																								and(
+																									notStrictlyEqual(
+																										v,
+																										integer17(),
+																									),
+																									and(
+																										notStrictlyEqual(
+																											v,
+																											Eighteen(),
+																										),
+																										and(
+																											notStrictlyEqual(
+																												v,
+																												nineteenify(
+																													loggingEnabled,
+																												),
+																											),
+																											and(
+																												notStrictlyEqual(
+																													v,
+																													numbertwenty(
+																														loggingEnabled,
+																													),
+																												),
+																												and(
+																													notStrictlyEqual(
+																														v,
+																														always21(),
+																													),
+																													and(
+																														notStrictlyEqual(
+																															v,
+																															twentytwo,
+																														),
+																														and(
+																															notStrictlyEqual(
+																																v,
+																																TWENTY_THREE,
+																															),
+																															and(
+																																notStrictlyEqual(
+																																	v,
+																																	sixtyseven(),
+																																),
+																																and(
+																																	notStrictlyEqual(
+																																		v,
+																																		parseInt(
+																																			theNumberSeven,
+																																			ten,
+																																		),
+																																	),
+																																	and(
+																																		notStrictlyEqual(
+																																			v,
+																																			theNumberSeven,
+																																		),
+																																		and(
+																																			logicalNot(
+																																				isUndefined(
+																																					v,
+																																				),
+																																			),
+																																			and(
+																																				logicalNot(
+																																					isNull(
+																																						v,
+																																					),
+																																				),
+																																				and(
+																																					logicalNot(
+																																						isNil(
+																																							v,
+																																						),
+																																					),
+																																					and(
+																																						isUnnull(
+																																							v,
+																																						),
+																																						and(
+																																							not(
+																																								isNil,
+																																							)(
+																																								v,
+																																							),
+																																							and(
+																																								logicalNot(
+																																									isEqual(
+																																										value,
+																																										NO,
+																																									),
+																																								),
+																																								and(
+																																									logicalNot(
+																																										isEqual(
+																																											value,
+																																											YES,
+																																										),
+																																									),
+																																									and(
+																																										logicalNot(
+																																											isEqualTo(
+																																												value,
+																																												NO,
+																																											),
+																																										),
+																																										and(
+																																											logicalNot(
+																																												isEqualTo(
+																																													value,
+																																													YES,
+																																												),
+																																											),
+																																											and(
+																																												logicalNot(
+																																													couldThisCouldItBeTrue(
+																																														v,
+																																													),
+																																												),
+																																												and(
+																																													logicalNot(
+																																														isNaN(
+																																															v,
+																																														),
+																																													),
+																																													and(
+																																														logicalNot(
+																																															isNegativeInfinity(
+																																																v,
+																																															),
+																																														),
+																																														and(
+																																															logicalNot(
+																																																isNegativeZero2(
+																																																	v,
+																																																),
+																																															),
+																																															and(
+																																																logicalNot(
+																																																	is0_2.isNegativeZero(
+																																																		v,
+																																																	),
+																																																),
+																																																and(
+																																																	logicalNot(
+																																																		isNegativeZero(
+																																																			v,
+																																																		),
+																																																	),
+																																																	and(
+																																																		logicalNot(
+																																																			isPositiveZero(
+																																																				v,
+																																																			),
+																																																		),
+																																																		and(
+																																																			logicalNot(
+																																																				is0_2.isPositiveZero(
+																																																					v,
+																																																				),
+																																																			),
+																																																			and(
+																																																				logicalNot(
+																																																					is0(
+																																																						v,
+																																																					),
+																																																				),
+																																																				and(
+																																																					logicalNot(
+																																																						is0_2.isZero(
+																																																							v,
+																																																						),
+																																																					),
+																																																					and(
+																																																						logicalNot(
+																																																							zerosurgeIsZero(
+																																																								v,
+																																																								loggingEnabled,
+																																																							),
+																																																						),
+																																																						and(
+																																																							logicalNot(
+																																																								is1(
+																																																									v,
+																																																								),
+																																																							),
+																																																							and(
+																																																								logicalNot(
+																																																									isTwo(
+																																																										v,
+																																																									),
+																																																								),
+																																																								and(
+																																																									logicalNot(
+																																																										isThree(
+																																																											v,
+																																																										),
+																																																									),
+																																																									and(
+																																																										logicalNot(
+																																																											isFour(
+																																																												v,
+																																																											),
+																																																										),
+																																																										and(
+																																																											logicalNot(
+																																																												isFive(
+																																																													v,
+																																																												),
+																																																											),
+																																																											and(
+																																																												logicalNot(
+																																																													isSix(
+																																																														v,
+																																																													),
+																																																												),
+																																																												and(
+																																																													logicalNot(
+																																																														isSeven(
+																																																															v,
+																																																														),
+																																																													),
+																																																													and(
+																																																														logicalNot(
+																																																															eightToolkit.isEight(
+																																																																v,
+																																																															),
+																																																														),
+																																																														and(
+																																																															logicalNot(
+																																																																is(
+																																																																	v,
+																																																																).thirteen(),
+																																																															),
+																																																															and(
+																																																																logicalNot(
+																																																																	isHundred(
+																																																																		v,
+																																																																	),
+																																																																),
+																																																																and(
+																																																																	logicalNot(
+																																																																		isThousand(
+																																																																			v,
+																																																																		),
+																																																																	),
+																																																																	and(
+																																																																		logicalNot(
+																																																																			isTenThousand(
+																																																																				v,
+																																																																			),
+																																																																		),
+																																																																		and(
+																																																																			logicalNot(
+																																																																				isEqTenThousand(
+																																																																					v,
+																																																																				),
+																																																																			),
+																																																																			and(
+																																																																				logicalNot(
+																																																																					isNumber(
+																																																																						v,
+																																																																					),
+																																																																				),
+																																																																				and(
+																																																																					logicalNot(
+																																																																						isActualNumber(
+																																																																							v,
+																																																																						),
+																																																																					),
+																																																																					and(
+																																																																						logicalNot(
+																																																																							isIsOdd(
+																																																																								v,
+																																																																							),
+																																																																						),
+																																																																						and(
+																																																																							logicalNot(
+																																																																								isOd(
+																																																																									v,
+																																																																								),
+																																																																							),
+																																																																							and(
+																																																																								notStrictlyEqual(
+																																																																									v,
+																																																																									t(),
+																																																																								),
+																																																																								and(
+																																																																									notStrictlyEqual(
+																																																																										v,
+																																																																										tVal,
+																																																																									),
+																																																																									and(
+																																																																										notStrictlyEqual(
+																																																																											v,
+																																																																											trueValue,
+																																																																										),
+																																																																										and(
+																																																																											util.isDeepStrictEqual(
+																																																																												v,
+																																																																												_f(),
+																																																																											),
+																																																																											and(
+																																																																												isEqualTo(
+																																																																													v,
+																																																																													_f(),
+																																																																												),
+																																																																												and(
+																																																																													isEqual(
+																																																																														v,
+																																																																														_f(),
+																																																																													),
+																																																																													and(
+																																																																														_.isEqual(
+																																																																															v,
+																																																																															_f(),
+																																																																														),
+																																																																														and(
+																																																																															underscore.isEqual(
+																																																																																v,
+																																																																																_f(),
+																																																																															),
+																																																																															and(
+																																																																																strictlyEqual(
+																																																																																	v,
+																																																																																	_f(),
+																																																																																),
+																																																																																and(
+																																																																																	strictlyEqual(
+																																																																																		v,
+																																																																																		FALSE,
+																																																																																	),
+																																																																																	couldThisCouldItBeFalse(
+																																																																																		v,
+																																																																																	),
+																																																																																),
+																																																																															),
+																																																																														),
+																																																																													),
+																																																																												),
+																																																																											),
+																																																																										),
+																																																																									),
+																																																																								),
+																																																																							),
+																																																																						),
+																																																																					),
+																																																																				),
+																																																																			),
+																																																																		),
+																																																																	),
+																																																																),
+																																																															),
+																																																														),
+																																																													),
+																																																												),
+																																																											),
+																																																										),
+																																																									),
+																																																								),
+																																																							),
+																																																						),
+																																																					),
+																																																				),
+																																																			),
+																																																		),
+																																																	),
+																																																),
+																																															),
+																																														),
+																																													),
+																																												),
+																																											),
+																																										),
+																																									),
+																																								),
+																																							),
+																																						),
+																																					),
+																																				),
+																																			),
+																																		),
+																																	),
+																																),
+																															),
+																														),
+																													),
+																												),
+																											),
+																										),
+																									),
+																								),
+																							),
+																						),
+																					),
+																				),
+																			),
+																		),
+																	),
+																),
+															),
+														),
+													),
+												),
+											),
+										),
+									),
+								),
+							),
+						),
+					),
+				),
+			)
 
 			return cond
 		}
