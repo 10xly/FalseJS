@@ -1,6 +1,6 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "4.1.8",
+	"version": "4.1.9",
 	"description": "Returns false.",
 	"main": "index.js",
 	"scripts": {
@@ -19,6 +19,7 @@
 		"@ahsm/noop": "^1.0.0",
 		"@colors/colors": "^1.6.0",
 		"@falsejs/is-true-helper": "^1.0.2",
+		"@falsejs/validation-failed-to-pass-error": "github:10xly/FalseJS-FalseJSValidationFailedToPassError",
 		"@identity-js/identity": "^1.2.13",
 		"@is-(unknown)/is-nil": "^1.2.0",
 		"@is-(unknown)/is-null": "^1.2.2",

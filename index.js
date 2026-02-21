@@ -458,12 +458,7 @@ if (isComputerOnFire()) {
 			}
 		}
 
-		const FalseJSValidationFailedToPassError = class extends Error {
-			constructor(...stuff) {
-				super(...stuff)
-				this.name = "FalseJSValidationFailedToPassError"
-			}
-		}
+		const FalseJSValidationFailedToPassError = require("@falsejs/validation-failed-to-pass-error")
 
 		const SuccessorHelper = class {
 			s(value) {
