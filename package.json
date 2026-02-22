@@ -1,16 +1,15 @@
 {
 	"name": "@falsejs/falsejs",
-	"version": "4.1.11",
-	"description": "Returns false.",
+	"version": "4.1.12",
+	"description": "FalseJS",
 	"main": "index.js",
 	"scripts": {
 		"test": "node index.test.js",
 		"preinstall": "node preinstall",
-		"lint": "npx @biomejs/biome check --write",
-		"build": "tsc"
+		"lint": "npx @biomejs/biome check --write"
 	},
 	"author": "tj-commits",
-	"license": "MIT",
+	"license": "EGPSL10X-1.0",
 	"dependencies": {
 		"-": "^0.0.1",
 		"@_immo/return": "^1.1.1",
@@ -90,7 +89,6 @@
 		"general-concat": "^1.0.0",
 		"get-intrinsic": "^1.2.4",
 		"get-member": "^1337.69.420",
-		"github-commits-database": "^1.0.0",
 		"greenlantern": "^2.0.1",
 		"has-no-self-equality": "^0.0.1",
 		"has-self-equality": "^0.0.1",
