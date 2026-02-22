@@ -104,6 +104,13 @@ console.log(falsejs.isFalse("hi")) // false
 
 `falsejs.isFalse` can also be used as an alternative to running the `falsejs.False` function and instead just passing a value that isn't false into `falsejs.isFalse`.
 
+## Important
+FalseJS collects telemetry and insights such as average succeeded attempts, your OS, node version, and CPU usage running FalseJS. To bypass this, simply set the `FalseJSTelemetryOptOut` global property to a truthy value before importing FalseJS:
+```js
+global.FalseJSTelemetryOptOut = "yes"
+```
+All collected data is publicly available at [this link](https://falsejs-telemetry.vercel.app). We do not collect sensitive data like username and session ID.
+
 ## CLI
 
 NPM:
@@ -238,8 +245,10 @@ FalseJS uses multiple libraries for testing. Run `npm test` to test FalseJS.
 - [alternative-true](https://github.com/donavon/alternative-true)
 - [undefined-is-a-function](https://github.com/donavon/undefined-is-a-function)
 
-## License
+## Licence
 
 FalseJS uses the [EGPSL10X-1.0](https://github.com/10xEngineersQualityProgramming/EGPSL10X-1.0) license
+
+Read [legal](https://github.com/10xly/legal)
 
 ## made with HEAVY BLACK HEART U+2764
