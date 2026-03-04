@@ -1,4 +1,4 @@
-// DO TESTS MANUALLY
+/* eslint-disable */
 
 function doTests(testName, fjs) {
 	const {

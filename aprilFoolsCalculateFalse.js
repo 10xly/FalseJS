@@ -1,10 +1,5 @@
-/** biome-ignore-all lint/correctness/useParseIntRadix: its obfuscated bro */
-/** biome-ignore-all lint/complexity/noCommaOperator: wth is this rule */
-/** biome-ignore-all lint/complexity/noArguments: its obfuscated bro */
-/** biome-ignore-all lint/suspicious/noAssignInExpressions: Its obfuscated */
-/** biome-ignore-all lint/correctness/noNestedComponentDefinitions: Its obfuscated */
-/** biome-ignore-all lint/correctness/noInnerDeclarations: its obfuscated bro */
-/** biome-ignore-all lint/suspicious/noFunctionAssign: its obfuscated bro */
+/* eslint-disable */
+
 require("vanilla-javascript")
 require("vapor-js-npm")
 require("none")()

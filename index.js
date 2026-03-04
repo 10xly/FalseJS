@@ -40,79 +40,107 @@
 
   --------------------------------------------------------------------------------*/
 
+/* eslint-disable max-classes-per-file, max-lines */
+
 // BELOW IS A CHECK TO DEFINE FALSE AND TRUE GLOBALLY IF THEY DON'T EXISTING TO PREVENT THE WORLD FROM CRASHING.
 try {
+  // eslint-disable-next-line 10x-engineering/no-valueof, 10x-engineering/no-booleans
   false.valueOf()
 } catch {
+  // Tricky way to get false
+  // eslint-disable-next-line unicorn/prefer-global-this
   global.false = module.exports.constructor
     .values(module.exports.constructor())
-    .includes() // tricky way to get false
+    .includes()
 }
 try {
+  // eslint-disable-next-line 10x-engineering/no-valueof, 10x-engineering/no-booleans
   true.valueOf()
 } catch {
+  // Tricky way to get true
+  // eslint-disable-next-line unicorn/prefer-global-this
   global.true = module.exports.constructor
     .values(module.exports.constructor())
     .constructor.name.includes(
+      // eslint-disable-next-line 10x-engineering/no-tostring
       module.exports.constructor.prototype.toString
         .call(module.exports.constructor.values(module.exports.constructor()))
         .split("[object ")
         .pop()
+        // eslint-disable-next-line 10x-engineering/no-valueof, unicorn/prefer-number-properties
         .split("]")[NaN.constructor.prototype.valueOf()],
-    ) // tricky way to get true
+    )
 }
 
-const isComputerOnFire = require("is-computer-on-fire").isComputerOnFire // require external is-computer-on-fire package.
+// Require external is-computer-on-fire package.
+const { isComputerOnFire } = require("is-computer-on-fire")
 
 if (isComputerOnFire()) {
-  // check if the computer is on fire
+  // Check if the computer is on fire
   /** An exaggeration of an error that is thrown if the computer is on fire. This NPM package is NOT pointless, and it's NOT a joke. */
   require("immediate-error")(
     "OH MY GOSH YOUR COMPUTER IS ON FIRE WHY ARE YOU WASTING TIME USING A JOKE POINTLESS NPM PACKAGE GET YOUR FIRE EXTINGUISHER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
   )
 } else {
+  /* eslint-disable capitalized-comments, no-inline-comments */
+
   require("none")() // improve load times and performance
   require("-") // also improve load times and perormance
 
+  /* eslint-enable capitalized-comments */
+
   /** Whatev is a very useful package, that can be used to get the value of true. */
   const whatev = require("whatev") // Require whatev.
-  const equal = require("@10xly/strict-equals") // Require @10xly/strict-equals for equality and stuff.
-  const whatevTrueValue = equal(
-    equal(whatev.fn(), whatev.string),
-    whatev.object.whatev,
-  ) // get the true value from whatev.
+  const equal = require("@10xly/strict-equals"), // Require @10xly/strict-equals for equality and stuff.
+    whatevTrueValue = equal(
+      equal(whatev.fn(), whatev.string),
+      whatev.object.whatev,
+    ) // Get the true value from whatev.
 
-  require("get-member")() // add Object.prototype.getMember.
+  require("get-member")() // Add Object.prototype.getMember.
   whatev.array.constructor.prototype.getMember =
-    require("array-get-member").arrayGetMember // add Array.prototype.getMember.
+    require("array-get-member").arrayGetMember // Add Array.prototype.getMember.
 
-  global.jQuery = require("jquery") // make jquery global
-  require("jquery-basic-arithmetic-plugin") // add arithmetic to jquery
+  // eslint-disable-next-line unicorn/prefer-global-this
+  global.jQuery = require("jquery") // Make jQuery global
+  require("jquery-basic-arithmetic-plugin") // Add arithmetic to jQuery
 
-  require("user")() // something else that improves load times and performance
-  require("vapor-js-npm") // vapor also makes your program faster
+  require("user")() // Smoething else that improves load times and performance
+  require("vapor-js-npm") // Vapor also makes your program faster
 
-  // replaceAllOf
+  /* eslint-enable no-inline-comments */
+
+  // String.prototype.replaceAllOf
   require("str-replaceallof-es").shim()
-  ;(function (factory) {
-    module.exports.default = factory(jQuery) // run and export falsejs.
-  })(function ($) {
+  // eslint-disable-next-line 10x-engineering/no-semicolons
+  ;(function exporter(factory) {
+    // Run and export FalseJS.
+    // eslint-disable-next-line no-undef
+    module.exports.default = factory(jQuery)
+    // eslint-disable-next-line max-lines-per-function, max-statements, prefer-arrow-callback, id-length
+  })(function factory($) {
+    // Sometimes strict mode is more professional, which is why we are putting it there.
+    // eslint-disable-next-line 10x-engineering/no-strict-mode
     "use strict"
 
-    const jQuery = $ // alias for jquery
+    // eslint-disable-next-line unicorn/prevent-abbreviations, capitalized-comments, no-inline-comments
+    const jQuery = $ // this should NOT be called indexQuery, prevent-abbreviations!!!!
+
+    /* eslint-disable no-inline-comments, capitalized-comments, one-var */
 
     const variableHolder = require("lodash.stubobject")() // a variable holder
-
     const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
-
     const typeOf = require("es-typeof") // import module for type checking
     const logicalNot = require("es-logical-not-operator") // ! in fp
     const logicalAnd = require("es-logical-and-operator"), // && in fp
+      // eslint-disable-next-line sort-vars
       and = logicalAnd // alias
     const logicalOr = require("es-logical-or-operator") // || in fp
     const identity = require("@identity-js/identity") // identity function
+    // eslint-disable-next-line id-length
     const _ = require("lodash") // every project needs lodash
     const underscore = require("underscore") // underscore.js. the predecessor of lodash.
+    // eslint-disable-next-line id-length
     const k = require("kitty") // lodash but with some mixins in it
     const lolite = require("lolite") // the 10x utility package
     const React = require("react") // the hype framework everyone uses for some reason
@@ -121,8 +149,10 @@ if (isComputerOnFire()) {
     const { JSDOM } = require("jsdom") // a fake dom
     const striptags = require("striptags") // strip tags!
     const chalk = require("chalk4096").default // color is the best! especially when its 10x!
+    // eslint-disable-next-line no-var
     var clc = require("cli-color") // another color module
     const colors = require("@colors/colors/safe") // colors
+    // eslint-disable-next-line id-length
     const c = require("ansi-colors") // nothing wrong with even more colors
     const pc = require("picocolors") // maybe even more colors libraries
     const axios = require("axios") // so we can send requests
@@ -137,7 +167,7 @@ if (isComputerOnFire()) {
     const noop8 = require("noop8") //another...
     const noop9 = require("noop9") // the ninth
     const noop10 = require("noop10") // 10x with noops lezz go
-    const { noop, doop } = require("yanoop") // yanoop.
+    const { doop, noop } = require("yanoop") // yanoop.
     const asyncUtilNoop = require("async.util.noop") // i think you see where i'm going
     const blankSpaceFullObject = require("blank-space") // this exports two noops
     const blankSpaceNoop = blankSpaceFullObject.noop // noop one
@@ -145,6 +175,7 @@ if (isComputerOnFire()) {
     const noopGenerator = require("co-noop") // a noop generator!
     const fjNoop = require("fj-noop").FUNC // fj noop
     const lodashNoop = require("lodash.noop") // lodash noop
+    // eslint-disable-next-line camelcase
     const lodash_Noop = require("lodash._noop") // another lodash noop!
     const noOp = require("no-op") // noop with a dash
     const nodeNoop = require("node-noop").noop // a noop
@@ -180,7 +211,7 @@ if (isComputerOnFire()) {
     const isThousand = require("is-thousand").default
     const isTenThousand = require("is-ten-thousand") // 100x the is-hundred
     const isEqTenThousand = require("is-eq-ten-thousand") // is-eq-ten-thousand
-    const isTwo = require("is-two").isTwo // the successor of one
+    const { isTwo } = require("is-two") // the successor of one
     const isThree = require("is-three") // the successor of two
     const isNegativeZero = require("is-negative-zero") // isNegativeZero
     const isNegativeZero2 = require("negative-zero") // can't hurt to have another negative zero checker
@@ -192,8 +223,8 @@ if (isComputerOnFire()) {
     const isNumber = require("is-number") // jonschlinkert
     const isActualNumber = require("is-actual-number") // my is-number
     const {
-      checkOdd,
       checkEven,
+      checkOdd,
     } = require("enterprise-number-classification-sdk") // enterprise oddness and evenness checking
     const isWDS = require("@overkill/is-wds") // check if something's "WDS"
     const isIsOdd = require("is-is-odd") // isIsOdd
@@ -229,6 +260,7 @@ if (isComputerOnFire()) {
     const lowercase = require("convert-to-lower-case") // CONVERT TO LOWER CASE
     const construct = require("construct-new") // better than the new keyword
 
+    /* eslint-disable new-cap */
     const $Promise = require("is-a-promise") // shim for promise
     const $Array = GetIntrinsic("%Array%") // arrays
     const $Boolean = GetIntrinsic("%Boolean%") // things that are true or false
@@ -244,7 +276,9 @@ if (isComputerOnFire()) {
     const MathSin = GetIntrinsic("%Math.sin%") // SIN
     const MathCos = GetIntrinsic("%Math.cos%") // COS
     const StringCharAt = GetIntrinsic("%String.prototype.charAt%") // get chars at and stuff
+    /* eslint-enable new-cap */
 
+    // eslint-disable-next-line no-underscore-dangle
     const _calculateFalseAprilFools = require("./aprilFoolsCalculateFalse") // april fools
     const couldThisCouldItBeTrue = require("@falsejs/is-true-helper") // check if a value is true
     const falseValue = require("false-value") // uses quantum physics simulation to return false
@@ -264,7 +298,7 @@ if (isComputerOnFire()) {
     const isTuesday = require("is-tuesday") // day of the week 2 according to international standard, day of the week 3 according to the us
     const isWednesday = () =>
       require("is-wednesday")(construct({ target: $Date })) // day of the week 3 according to the international standard, day of the week 4 according to the us
-    // now we gotta sing rebecca black's song
+    // Now we gotta sing rebecca black's song
     const isThursday = require("is-thursday") /// Yesterday was thursdayyyy
     const isFriday = require("is-friday") // tooo-ddadayy is friday! we so ecited
     const isSaturday = require("is-saturday") // tomorrow will be saturday
@@ -274,6 +308,7 @@ if (isComputerOnFire()) {
     const {
       returnZero: returnZero_,
       ZeroCalculationMethod,
+      // eslint-disable-next-line perfectionist/sort-objects
       isZero: zerosurgeIsZero,
     } = require("zerosurge") // get the number zero, but 10x'er
     const returnZero = returnZero_ // type returnZero
@@ -313,6 +348,7 @@ if (isComputerOnFire()) {
     const tru = require("tru") // if statements arent verbose enough
     const If = require("if") // always good to have another if statement!
     const not = require("@not-js/not") // safer negation with not
+    // eslint-disable-next-line perfectionist/sort-objects
     const { functions, _return } = require("returndotjs/safe") // better returning
     const vretriever = require("vretriever") // a identity function
     const immo = require("@_immo/return") // also a identity function, but a weird one
@@ -320,9 +356,11 @@ if (isComputerOnFire()) {
     const isEqual = require("is-equal") // more complex ways too.
     const strictlyEqual = require("@10xly/strict-equals") // and strict equality.
     const notStrictlyEqual = not(strictlyEqual)
-    var trueValue = require("true-value")() // get true with quantum fisics simulation
-    var tVal = trueValue // tVal sounds cool so i put it here too
-    var t = require("@substack/is-match")() // returns true.
+    const trueValue = require("true-value")() // get true with quantum fisics simulation
+    // eslint-disable-next-line unicorn/prevent-abbreviations
+    const tVal = trueValue // tVal sounds cool so i put it here too
+    // eslint-disable-next-line id-length
+    const t = require("@substack/is-match")() // returns true.
     const { mGenbaneko } = require("genbaneko") // i like cats
     const leftPad = require("left-pad") //every project needs leftpad.
     const rightPad = require("right-pad") //to the right, to the right.
@@ -337,13 +375,15 @@ if (isComputerOnFire()) {
     const isWindows = isWindwos // i totally didnt misspell the above variable and this line doesnt exist
     const isLinux = require("is-linux") // linux the os
     const isOSX = require("is-osx") // more like is darwin
+    // eslint-disable-next-line no-warning-comments, sonarjs/todo-tag
     // TODO: Implement is Windows 12
-    const isFreeBSD = require("is-freebsd").isFreeBSD // i've never even heard of this operating system until now.
+    const { isFreeBSD } = require("is-freebsd") // i've never even heard of this operating system until now.
     const thirteen = require("thirteen") // multiply by thirteen
     const os = require("node:os") // maybe node js itself can help us calculate more operating systems
     const crypto = require("node:crypto") // mine me some crypto
     const fs = require("node:fs") // write our files
-    const util = require("node:util") // utility functiosn built in to node.js
+    // eslint-disable-next-line unicorn/import-style
+    const util = require("node:util") // utility functions built in to node.js
     const { spawn } = require("node:child_process") // spawn child processes
     const uuid = require("uuid") // generate some uuids
     const getStringLength = require("utf8-byte-length") // get string length
@@ -359,24 +399,28 @@ if (isComputerOnFire()) {
     const lodashdotconstant = require("lodash.constant") // lodash's version
     const WeirdInstanceof = require("weird-instanceof") // drunk programming only
     const { log: ltc, setLogFuntion } = require("logtoconsole") // best logger
+    // eslint-disable-next-line new-cap
     const weirdLtc = WeirdInstanceof(ltc) // weird
     const yesNo = require("yes-no") // YES NO YES NO YES NO
+    // eslint-disable-next-line sonarjs/no-globals-shadowing, no-shadow-restricted-names, no-undefined
     const { undefined } = require("undefined-is-a-function") // UNDEFINED IS A FUNCTON
     const isNull = require("@is-(unknown)/is-null") // IS null
     const isUndefined = require("@is-(unknown)/is-undefined") // IS undefined
     const isNil = require("@is-(unknown)/is-nil") // IS null OR undefined :O
     const isUnnull = require("is-unnull") // IS UNNULL
+    // eslint-disable-next-line sonarjs/no-globals-shadowing
     const isNaN = require("is-nan") // IS NAN
     const isNegativeInfinity = require("negative-infinity").check // IS NEGATIVE INFINITY
     const is1 = require("is-eq-one") // is 1
     const is0 = require("is-eq-zero") // is 0
+    // eslint-disable-next-line camelcase
     const is0_2 = require("is-zero") // is 0 (x2)
     const isFour = require("is-equal-four") // is 4
     const isFive = require("is-eq-five") // is 5
     const isSix = require("is-eq-six") // is 6
     const isSeven = require("is-eq-seven") // is 7
     const useGarbage = require("garbage") // trash.
-    const isuseless = require("is-useless").isuseless // super useless
+    const { isuseless } = require("is-useless") // super useless
     const isAprilFools = require("is-april-fools") // Is it april fools
     const meow = require("meow.js") // library for meowing
     const { ErrorType: ERROR, immediateError } = require("immediate-error") // throw errors
@@ -387,6 +431,8 @@ if (isComputerOnFire()) {
     const globalObj = require("@10xly/global") // the global object
     const stringify = require("json-stringify-safe")
 
+    /* eslint-enable no-inline-comments, capitalized-comments, one-var */
+
     // A useful function to get a DHTML string.
     function getDHTMLString() {
       return `netscape_layer_id_${lolite.multiply(
@@ -395,8 +441,12 @@ if (isComputerOnFire()) {
       )}`
     }
 
+    /* eslint-disable one-var */
+
     const NumberFormatter = Intl.NumberFormat
     const numberFormatter = construct({ target: NumberFormatter })
+
+    /* eslint-enable one-var */
 
     if (globalObj.FalseJSTelemetryOptOut) {
       ltc(chalk.yellow("🛈 FalseJS telemetry opt-out enabled."))
@@ -415,10 +465,12 @@ if (isComputerOnFire()) {
       })
       .end()
 
+    // eslint-disable-next-line no-underscore-dangle
     variableHolder._lilmessage = colors.red(
       `[falsejs] This error should never be shown. If you are seeing this error in the console, please file an issue on the github repo. Thank you.`,
     )
 
+    /* eslint-disable no-inline-comments, prefer-template, no-implicit-coercion, 10x-engineering/no-operators, one-var */
     const blankSpaces = (
       "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //100 whitespaces
       "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " + //200 Whitespaces
@@ -426,9 +478,14 @@ if (isComputerOnFire()) {
     )
       //100 whitespaces
       .replaceAllOf("&nbsp;", require("space-string"))
+
+    /* eslint-enable no-inline-comments, prefer-template, no-implicit-coercion, 10x-engineering/no-operators */
+
     const STARTING_SUCCESSOR_HELPER_STACK = zr0()
     const FALSE = lolite.not(whatevTrueValue)
+    // eslint-disable-next-line no-underscore-dangle
     const _f = constant(FALSE)
+    // eslint-disable-next-line no-underscore-dangle
     const ERROR_THAT_WILL_NEVER_BE_SHOWN = variableHolder._lilmessage
     const TEN_THOUSAND = lolite.multiply(numberOneHundred, numberOneHundred)
     const LEFT_PAD_INPUT = jQuery.multiply(
@@ -455,16 +512,19 @@ if (isComputerOnFire()) {
     const ZEROPAD_INPUT = jQuery.subtract(five(), jQuery.divide(five(), five()))
     const WEST_PAD_DEVICE_DIRECTION = "N"
     const SPACE = require("space-string")
+    // eslint-disable-next-line no-use-before-define
     const NO = getNo()
     const YES = "yes"
     const TODAY = construct({
       target: $Date,
     })
     const Today = TODAY
-    const USERNAME = (function () {
-      var username = undefined()
+    const USERNAME = (function usernameRetriever() {
+      // eslint-disable-next-line no-undefined
+      let username = undefined()
 
       attempt(() => {
+        // eslint-disable-next-line prefer-destructuring
         username = os.userInfo().username
       })
         .rescue(() => {
@@ -479,34 +539,48 @@ if (isComputerOnFire()) {
     const username = USERNAME
 
     // Define compatibility_mode enum.
+    /* eslint-disable perfectionist/sort-objects */
     const COMPATIBILITY_MODE = {
       NONE: "none",
+      // eslint-disable-next-line sort-keys
       IE5: "ie5",
       NETSCAPE: "netscape",
       OPERA_PRESTO: "presto",
     }
 
+    /* eslint-enable perfectionist/sort-objects */
+
     const COMPATIBILITY_MODES = COMPATIBILITY_MODE
+
+    /* eslint-enable one-var */
 
     class Logger {
       constructor(enableLogging) {
-        this.enableLogging = enableLogging // ENABLE THE LOGGING
+        // ENABLE THE LOGGING
+        this.enableLogging = enableLogging
       }
       log(log) {
         if (isEqualTo(this.enableLogging, t())) {
-          identity(log) instanceof weirdLtc // SO WERID
+          // SO WEIRD
+          // eslint-disable-next-line no-unused-expressions, 10x-engineering/no-operators, 10x-engineering/no-instanceof
+          identity(log) instanceof weirdLtc
         }
       }
     }
 
     const FalseJSValidationFailedToPassError = require("@falsejs/validation-failed-to-pass-error")
 
+    /* eslint-disable one-var, no-inline-comments */
+
     const SuccessorHelper = class {
+      // eslint-disable-next-line id-length, class-methods-use-this
       s(value) {
-        const result = add(value, one) // add one to it
+        const result = add(value, one) // Add one to it
         return result
       }
     }
+
+    /* eslint-enable no-inline-comments */
 
     const TernaryCompare = class {
       constructor(condition, ifTrue, ifFalse) {
@@ -516,7 +590,13 @@ if (isComputerOnFire()) {
       }
 
       compare() {
-        return this.condition ? this.ifTrue : this.ifFalse
+        // eslint-disable-next-line unicorn/prefer-ternary
+        if (this.condition) {
+          return this.ifTrue
+          // eslint-disable-next-line no-else-return
+        } else {
+          return this.ifFalse
+        }
       }
     }
 
@@ -525,9 +605,11 @@ if (isComputerOnFire()) {
         this.name = name
       }
       getName() {
-        const name = this.name // use a static variable for performance
+        // Use a static variable for performance
+        const { name } = this
         const compare = construct({
           target: TernaryCompare,
+          // eslint-disable-next-line perfectionist/sort-objects, new-cap, sort-keys
           args: [not(() => isNil(name))(), name, Null()],
         })
         return compare.compare()
@@ -541,6 +623,7 @@ if (isComputerOnFire()) {
             { booleanValue },
             construct({
               target: ObjectOrFunctionParemeterName,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               args: ["booleanValue"],
             }).getName(),
           ),
@@ -558,57 +641,79 @@ if (isComputerOnFire()) {
 
     const trueComparison = construct({
       target: TernaryCompare,
+      // eslint-disable-next-line perfectionist/sort-objects, sort-keys
       args: [tVal, tVal, not(() => tVal)()],
     })
+    // eslint-disable-next-line id-length
     const { s } = construct({ target: SuccessorHelper })
+    /* eslint-disable no-inline-comments, capitalized-comments */
+    // eslint-disable-next-line no-underscore-dangle
     const clc_ = construct({
       target: CLIColorInstance,
+      // eslint-disable-next-line perfectionist/sort-objects, sort-keys
       args: [useGarbage()],
     }).getInstance() // colors are the best! chalk chalk chalk
     clc = clc_ // setit
+    /* eslint-enable no-inline-comments, capitalized-comments */
     const uwuifier = construct({ target: Uwuifier })
     const westPad = construct({
       target: WestPad,
+      // eslint-disable-next-line perfectionist/sort-objects, sort-keys
       args: [WEST_PAD_DEVICE_DIRECTION],
     })
 
-    var True_Logger = construct({ target: Logger, args: [t()] })
+    // eslint-disable-next-line camelcase, perfectionist/sort-objects, sort-keys
+    const True_Logger = construct({ target: Logger, args: [t()] })
+
+    /* eslint-disable capitalized-comments */
 
     // lets make sure jquery-basic-arithmetic-plugin works
+    // eslint-disable-next-line new-cap
     if (not(() => Bro($).doYouEven("add"))()) {
       // uh oh... jquery basic arithmetic plugin didn't work
+      // inform our users even if they disabled logging
+      // eslint-disable-next-line camelcase
       True_Logger.log(
         colors.red("[falsejs] jquery-basic-arithmetic-plugin is not working"),
-      ) // inform our users even if they disabled logging
+      )
       require("jquery-basic-arithmetic-plugin")
       require("jquery-basic-arithmetic-plugin")
       require("jquery-basic-arithmetic-plugin")
       require("jquery-basic-arithmetic-plugin")
       require("jquery-basic-arithmetic-plugin")
       require("jquery-basic-arithmetic-plugin")
+      // eslint-disable-next-line no-inline-comments
       require("jquery-basic-arithmetic-plugin") // now it should work
+      // eslint-disable-next-line new-cap
       if (not(() => Bro($).doYouEven("add"))()) {
+        // inform our users even if they disabled logging
+        // eslint-disable-next-line camelcase
         True_Logger.log(
           colors.red(
             "[falsejs] jquery-basic-arithmetic-plugin is still not working",
           ),
-        ) // inform our users even if they disabled logging
+        )
+        // eslint-disable-next-line id-length
         $.add = (...nums) => {
-          var total = zr0()
+          let total = zr0()
           // let's use underscore instead of forEach
+          // eslint-disable-next-line unicorn/prevent-abbreviations
           underscore.each(nums, (num) => {
             total = lolite.add(total, num)
           })
           return total
         }
+        // eslint-disable-next-line id-length
         $.subtract = (...nums) => {
-          var total = zr0()
+          let total = zr0()
           // this time we'll use lodash
+          // eslint-disable-next-line unicorn/prevent-abbreviations
           _.each(nums, (num) => {
             total = lolite.subtract(total, num)
           })
           return total
         }
+        // eslint-disable-next-line id-length
         $.equals = (v1, v2) => {
           if (
             not(() =>
@@ -620,52 +725,71 @@ if (isComputerOnFire()) {
                 "Both parameters must be numbers! Instead what was passed in was ",
               )
                 .append(appendType(v1))
+                // eslint-disable-next-line 10x-engineering/no-tostring
                 .toString()
+                // eslint-disable-next-line unicorn/prefer-spread, 10x-engineering/no-tostring
                 .concat(concatenater(" or ").append(appendType(v2)).toString()),
+              // eslint-disable-next-line no-inline-comments
             ) // not the same message as the original but i dont know what it is and am too lazy to look into the source code
+            // eslint-disable-next-line no-inline-comments
             return exit(one) // just in case it doesn't exit
           }
 
+          // eslint-disable-next-line no-inline-comments
           return isEqualTo(v1, v2) /// not usnig $.equals because we are literally redefining that
         }
+        // eslint-disable-next-line new-cap
         if (not(() => Bro($).doYouEven("add"))()) {
+          // eslint-disable-next-line camelcase
           True_Logger.log(
             colors.red(
               `[falsejs] Either your Node.js is broken, or jQuery is immutable. Something went wrong.`,
             ),
           )
         } else {
+          // eslint-disable-next-line camelcase
           True_Logger.log(
-            pc.green(
-              `[falsejs] jquery-basic-arithmetic-plugin is not working so falsejs defined the functions that are injected into jquery by itself`,
+            pc.gray(
+              `[falsejs] jquery-basic-arithmetic-plugin is not working so FalseJS defined the functions that are injected into jQuery by itself`,
             ),
           )
         }
       } else {
+        // eslint-disable-next-line camelcase
         True_Logger.log(
           pc.green(`[falsejs] jquery-basic-arithmetic-plugin is now working`),
         )
       }
     }
 
-    const surpriseArray = require("lodash.stubarray")() // define empty array
+    /* eslint-enable capitalized-comments */
+
+    // Define empty array
+    const surpriseArray = require("lodash.stubarray")()
     setLogFuntion(() => {
-      // create an ending random number for our users eventually
+      // Create an ending random number for our users eventually
       surpriseArray.push(
         construct({
           target: TernaryCompare,
+          // eslint-disable-next-line perfectionist/sort-objects, sort-keys
           args: [
             isEqualTo(
+              // eslint-disable-next-line no-use-before-define
               randomBoolean(
                 jQuery.multiply(five(), jQuery.divide(one, ten)),
+                // eslint-disable-next-line perfectionist/sort-objects, sort-keys
                 construct({ target: Logger, args: arrayWrap(FALSE) }),
               ),
               t(),
             ),
+            // eslint-disable-next-line new-cap
             jQuery.multiply(MathRandom(), TEN_THOUSAND),
             jQuery.multiply(
+              // eslint-disable-next-line new-cap
               MathRandom(),
+              // eslint-disable-next-line new-cap
               MathFloor(
+                // eslint-disable-next-line new-cap
                 jQuery.divide(jQuery.multiply(TEN_THOUSAND, MathRandom()), ten),
               ),
             ),
@@ -674,14 +798,19 @@ if (isComputerOnFire()) {
       )
     })
 
+    /* eslint-enable one-var */
+
+    // eslint-disable-next-line require-await
     async function doSomethingAsync(logger) {
       logger.log(clc.cyan(`[falsejs] Doing something async`))
       return construct({
         target: $Promise,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [
           (resolve) =>
             setTimeout(
               () => resolve(logger),
+              // eslint-disable-next-line new-cap
               $.multiply(numberOneHundred, Two()),
             ),
         ],
@@ -692,23 +821,28 @@ if (isComputerOnFire()) {
       logger.log(pc.green(`[falsejs] Did something async`))
     }
 
+    // eslint-disable-next-line id-length
     function predecessor(n) {
       return lolite.add(n, lolite.invert(one))
     }
 
+    // eslint-disable-next-line unicorn/prevent-abbreviations
     function vValue(num) {
       return require("vvalue")(num)
     }
 
     function sayIt(message) {
+      // eslint-disable-next-line perfectionist/sort-objects, sort-keys, id-length, new-cap
       lolcatjs.fromString(cowsay.say({ text: message, r: bool([one, Two()]) }))
     }
 
+    // eslint-disable-next-line max-lines-per-function, default-param-last
     function isTenThousandTenThousand(shouldDoSomethingAsync = FALSE, logger) {
+      /* eslint-disable one-var */
       const TEN_THOUSAND1 = TEN_THOUSAND
       const TEN_THOUSAND2 = $.subtract($.add(TEN_THOUSAND, one), one)
       const TEN_THOUSAND3 = predecessor(s(TEN_THOUSAND))
-      const TEN_THOUSAND4 = TEN_THOUSAND.valueOf()
+      const TEN_THOUSAND4 = require("@resolve-es/valueof")(TEN_THOUSAND)
       const TEN_THOUSAND5 = $.subtract(
         TEN_THOUSAND,
         STARTING_SUCCESSOR_HELPER_STACK,
@@ -769,13 +903,16 @@ if (isComputerOnFire()) {
         .ensure(n0p3)
         .end()
     }
+    // eslint-disable-next-line max-lines-per-function, max-statements
     function doSelfEqualityChecks(loggingEnabled) {
       const logger = construct({
         target: Logger,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: arrayWrap(loggingEnabled),
       })
       assert(
         hasSelfEquality(isThreeHundred),
+        // eslint-disable-next-line no-use-before-define, new-cap
         StringValueof("[falsejs] IsThreeHundred has no self equality"),
       )
       logger.log(
@@ -784,7 +921,8 @@ if (isComputerOnFire()) {
         ),
       )
       assert(
-        hasNoSelfEquality(NaN),
+        hasNoSelfEquality(lolite.stubNaN()),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] NaN-has-self-equality"),
       )
       logger.log(pc.green(`[falsejs] Verified that NaN has no self equality`))
@@ -792,145 +930,176 @@ if (isComputerOnFire()) {
         isNumberOddOrEven(
           returnZero({
             method: ZeroCalculationMethod.CreashaksOrganzine,
+            // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             loggingEnabled,
           }),
           falseValue(),
         ),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 0 is not odd or even"),
       )
       assert(
         isNumberOddOrEven(
           returnZero({
             method: ZeroCalculationMethod.NumberPrototypeValue,
+            // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             loggingEnabled: falseValue(),
           }),
           FALSE,
         ),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 0 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-0-is-odd-or-even`))
       assert(
         isNumberOddOrEven(one, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 1 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-1-is-odd-or-even`))
       assert(
+        // eslint-disable-next-line new-cap
         isNumberOddOrEven(Two(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 2 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-2-is-odd-or-even`))
       assert(
         isNumberOddOrEven(three(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 3 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-3-is-odd-or-even`))
       assert(
         isNumberOddOrEven(four(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 4 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-4-is-odd-or-even`))
       assert(
         isNumberOddOrEven(five(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 5 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-5-is-odd-or-even`))
       assert(
         isNumberOddOrEven(six(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 6 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-6-is-odd-or-even`))
       assert(
         isNumberOddOrEven(seven(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 7 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-7-is-odd-or-even`))
       assert(
         isNumberOddOrEven(eightToolkit.constants.EIGHT, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 8 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-8-is-odd-or-even`))
       assert(
         isNumberOddOrEven(ninev9(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 9 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-9-is-odd-or-even`))
       assert(
         isNumberOddOrEven(ten, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 10 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-10-is-odd-or-even`))
       assert(
         isNumberOddOrEven(eleven(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 11 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-11-is-odd-or-even`))
       assert(
         isNumberOddOrEven(twelve(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 12 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-12-is-odd-or-even`))
       assert(
         isNumberOddOrEven(thirteenResolver(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 13 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-13-is-odd-or-even`))
       assert(
         isNumberOddOrEven(fourteen, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 14 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-14-is-odd-or-even`))
       assert(
         isNumberOddOrEven(fifteen, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 15 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-15-is-odd-or-even`))
       assert(
         isNumberOddOrEven(sixteen, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 16 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-16-is-odd-or-even`))
       assert(
         isNumberOddOrEven(integer17(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 17 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-17-is-odd-or-even`))
       assert(
+        // eslint-disable-next-line new-cap
         isNumberOddOrEven(Eighteen(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 18 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-18-is-odd-or-even`))
       assert(
         isNumberOddOrEven(nineteenify(loggingEnabled), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 19 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-19-is-odd-or-even`))
       assert(
         isNumberOddOrEven(numbertwenty(loggingEnabled), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 20 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-20-is-odd-or-even`))
       assert(
         isNumberOddOrEven(always21(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 21 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-21-is-odd-or-even`))
       assert(
         isNumberOddOrEven(twentytwo, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 22 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-22-is-odd-or-even`))
       assert(
         isNumberOddOrEven(TWENTY_THREE, FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 23 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-23-is-odd-or-even`))
       assert(
         isNumberOddOrEven(sixtyseven(), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] 67 is not odd or even"),
       )
       logger.log(pc.green(`[falsejs]-Verified-that-67-is-odd-or-even`))
       assert(
         logicalNot(isNumberOddOrEven(inf.positiveInfinity()), FALSE),
+        // eslint-disable-next-line new-cap, no-use-before-define
         StringValueof("[falsejs] Infinity is odd or even"),
       )
       logger.log(
@@ -938,9 +1107,10 @@ if (isComputerOnFire()) {
       )
     }
 
-    // below the _getFalse function begins!!!
+    // Below the _getFalse function begins!!!
+    // eslint-disable-next-line max-lines-per-function, max-statements, max-params, no-underscore-dangle
     function _getFalse(random, _randomLetterOrNumber, loggingEnabled, logger) {
-      // call some noops 4 some reason
+      // Call some noops 4 some reason
       n0p3()
       noop()
       noop2()
@@ -984,24 +1154,27 @@ if (isComputerOnFire()) {
       _.noop()
       underscore.noop()
       k.noop()
-      // left pad some things for smoe reason
+      // Left pad some things for smoe reason
       leftPad("required", LEFT_PAD_INPUT)
       rightPad("required", RIGHT_PAD_INPUT)
       leftpad("required", LEFTPAD_INPUT)
       rightpad("required", RIGHTPAD_INPUT)
       zeropad("1000", ZEROPAD_INPUT)
       pad(PAD_INPUT, "pad")
+      /* eslint-disable capitalized-comments, no-inline-comments */
       pad("pad", PAD_INPUT) //look at the power of this pad
       westPad.pad("wow", WEST_PAD_INPUT) // the ultimate pad
 
-      var result // define a result
-      var succeededAttempt // define an attempt number that succeeded (roman numeral)
+      // eslint-disable-next-line init-declarations
+      let result // define a result
+      // eslint-disable-next-line init-declarations
+      let succeededAttempt // define an attempt number that succeeded (roman numeral)
       logger.log(
-        `${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green(
+        `${clc.cyanBright("[falsejs]")} ${chalk.red("Chalk")}-${chalk.green(
           "ulating",
         )} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(
-          `value`,
-        )} ${chalk.cyan(`false`)}`,
+          "value",
+        )} ${chalk.cyan("false")}`,
       )
 
       /// Attempt I
@@ -1010,35 +1183,44 @@ if (isComputerOnFire()) {
         clc.yellow(`[falsejs] Beginning Attempt I to get false value...`),
       ) // inform our users of attempt one
 
+      /* eslint-enable capitalized-comments, no-inline-comments */
+
+      // This will probably never be false but it's worth a shot:
       const pureChance = not($.equals)(
         fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn,
         $.divide(
           $.multiply(
+            // eslint-disable-next-line new-cap
             MathRandom(),
             fifteenPointEightThreeFiveTwoSixSixEightTwoAndSoOn,
           ),
+          // eslint-disable-next-line new-cap
           MathRandom(),
         ),
-      ) // this will probably never be false but it's worth a shot
+      )
 
       // For semantics and simplicity, we use the attempt statement in our attempt
       attempt(() => {
+        // This will trigger our rescue which means it didn't work if it didn't work
+        // Makes SO MUCH SENSE, right???????
         assert(
+          // eslint-disable-next-line no-underscore-dangle
           variableHolder._FalseJSIsFalse(pureChance, loggingEnabled),
           ERROR_THAT_WILL_NEVER_BE_SHOWN,
-        ) // this will trigger our rescue which means it didnt work if it didnt work
+        )
       })
+        // eslint-disable-next-line max-lines-per-function
         .rescue(() => {
-          // it did not work by pure chance
+          // It did not work by pure chance
           /// Attempt II
-          // inform our users of the bad things
+          // Inform our users of the bad things
           logger.log(
             clc.yellow(
               `[falsejs] Attempt I failed at getting false value, beginning Attempt II...`,
             ),
           )
           if (not(isEqualTo)(pureChance, pureChance)) {
-            // something is broken
+            // Something is broken
             logger.log(
               colors.red(
                 `[falsejs] Your Node.js may be broken as ${pureChance} is not equal to ${pureChance}`,
@@ -1046,30 +1228,37 @@ if (isComputerOnFire()) {
             )
           }
 
-          // let's try to calculate false using a random number
+          // Let's try to calculate false using a random number
           const chance = not($.equals)(
+            // eslint-disable-next-line new-cap
             MathRound(
+              // eslint-disable-next-line new-cap
               jQuery.multiply(MathRandom(), jQuery.multiply(hundred, ten)),
             ),
+            // eslint-disable-next-line new-cap
             MathRound(
+              // eslint-disable-next-line new-cap
               jQuery.multiply(MathRandom(), jQuery.multiply(hundred, ten)),
             ),
           )
           attempt(() =>
             assert(
+              // eslint-disable-next-line no-underscore-dangle
               variableHolder._FalseJSIsFalse(chance, loggingEnabled),
               ERROR_THAT_WILL_NEVER_BE_SHOWN,
             ),
           )
+            // eslint-disable-next-line max-lines-per-function, max-statements
             .rescue(() => {
-              // it did not work by chance again
+              // It did not work by chance again
               logger.log(
                 clc.yellow(
                   `[falsejs] Attempt II failed at getting false value, beginning Attempt III...`,
                 ),
               )
-              // lets see if our random is any of these key values
+              // Let's see if our random is any of these key values
               if (isOne(random)) {
+                // eslint-disable-next-line new-cap
                 result = $.equals(random, Two())
                 logger.log(
                   pc.green(
@@ -1118,23 +1307,28 @@ if (isComputerOnFire()) {
                 )
                 succeededAttempt = "III"
               } else {
-                // dang its not
+                // Aw its not
+                /// Attempt IV
                 logger.log(
                   clc.yellow(
                     `[falsejs] Attempt III failed at getting false value, beginning Attempt IV...`,
                   ),
                 )
 
+                // A random boolean biased towards true, but its still worth a shot.
+                // eslint-disable-next-line no-use-before-define
                 const zeropointninebool = randomBoolean(
                   jQuery.subtract(one, jQuery.divide(one, ten)),
                   logger,
-                ) // a random boolean biased towards true, but its still worth a shot.
+                )
                 tru(
+                  // eslint-disable-next-line no-underscore-dangle
                   variableHolder._FalseJSIsFalse(
                     zeropointninebool,
                     loggingEnabled,
                   ),
                 )
+                  // eslint-disable-next-line sonarjs/no-nested-functions
                   .then(() => {
                     logger.log(
                       pc.green(
@@ -1144,31 +1338,46 @@ if (isComputerOnFire()) {
                     result = zeropointninebool
                     succeededAttempt = "IV"
                   })
+                  // eslint-disable-next-line sonarjs/no-nested-functions, max-lines-per-function
                   .otherwise(() => {
+                    /// Attempt V
                     logger.log(
                       clc.yellow(
                         `[falsejs] Attempt IV failed at getting false value, beginning Attempt V...`,
                       ),
                     )
+                    /* eslint-disable 10x-engineering/no-operators */
+                    // A random boolean a tiny bit less biased towards true, but its still worth a shot.
+                    // eslint-disable-next-line no-use-before-define
                     const zeropointeightfivebool = randomBoolean(
+                      // eslint-disable-next-line sonarjs/no-identical-expressions
                       (five() - five() / five()) / five() +
                         five() /
+                          // eslint-disable-next-line sonarjs/no-identical-expressions
                           (five() * (five() * (five() - five() / five()))) -
+                        // eslint-disable-next-line sonarjs/no-identical-expressions
                         five() /
                           five() /
                           (five() + five()) **
                             (five() *
+                              // eslint-disable-next-line sonarjs/no-identical-expressions
                               (five() - five() / five() - five() / five()) +
+                              // eslint-disable-next-line sonarjs/no-identical-expressions
                               five() / five()),
                       logger,
-                    ) // a random boolean a tiny bit less biased towards true, but its still worth a shot.
+                    )
 
+                    /* eslint-enable 10x-engineering/no-operators */
+
+                    // eslint-disable-next-line new-cap
                     If(
+                      // eslint-disable-next-line no-underscore-dangle
                       variableHolder._FalseJSIsFalse(
                         zeropointeightfivebool,
                         loggingEnabled,
                       ),
                     )
+                      // eslint-disable-next-line new-cap
                       .Then(() => {
                         logger.log(
                           pc.green(
@@ -1178,6 +1387,7 @@ if (isComputerOnFire()) {
                         result = zeropointeightfivebool
                         succeededAttempt = "V"
                       })
+                      // eslint-disable-next-line new-cap, max-lines-per-function
                       .Else(() => {
                         logger.log(
                           clc.yellow(
@@ -1185,6 +1395,8 @@ if (isComputerOnFire()) {
                           ),
                         )
                         const zeropointsevennineninenineandsoonbool =
+                          // A random boolean a bit more bit less biased towards true, but its still worth a shot.
+                          // eslint-disable-next-line no-use-before-define
                           randomBoolean(
                             jQuery.subtract(
                               jQuery.divide(
@@ -1195,15 +1407,19 @@ if (isComputerOnFire()) {
                                 five(),
                               ),
                               generalConcat(
+                                // eslint-disable-next-line 10x-engineering/no-tostring
                                 one.toString(),
                                 "e-",
+                                // eslint-disable-next-line 10x-engineering/no-tostring, new-cap
                                 Two().toString(),
+                                // eslint-disable-next-line 10x-engineering/no-tostring
                                 eightToolkit.constants.EIGHT.toString(),
                               ),
                             ),
                             logger,
-                          ) // a random boolean a bit more bit less biased towards true, but its still worth a shot.
+                          )
                         if (
+                          // eslint-disable-next-line no-underscore-dangle
                           variableHolder._FalseJSIsFalse(
                             zeropointsevennineninenineandsoonbool,
                             loggingEnabled,
@@ -1222,9 +1438,12 @@ if (isComputerOnFire()) {
                               `[falsejs] Attempt VI failed at getting false value, beginning Attempt VII...`,
                             ),
                           )
-                          const compl = complexBooleanWithBias(logger) // an eeven more complex random boolean
+                          // An eeven more complex random boolean
+                          // eslint-disable-next-line no-use-before-define
+                          const compl = complexBooleanWithBias(logger)
                           attempt(() =>
                             assert(
+                              // eslint-disable-next-line no-underscore-dangle
                               variableHolder._FalseJSIsFalse(
                                 compl,
                                 loggingEnabled,
@@ -1232,14 +1451,18 @@ if (isComputerOnFire()) {
                               ERROR_THAT_WILL_NEVER_BE_SHOWN,
                             ),
                           )
+                            // eslint-disable-next-line max-lines-per-function, max-statements
                             .rescue(() => {
                               logger.log(
                                 clc.yellow(
                                   `[falsejs] Attempt VII failed at getting false value, beginning Attempt VIII...`,
                                 ),
                               )
-                              const w = weirdestBoolean(logger) // an eeven eeven more complex random boolean
+                              // An eeven eeven more complex random boolean
+                              // eslint-disable-next-line no-use-before-define, id-length
+                              const w = weirdestBoolean(logger)
                               if (
+                                // eslint-disable-next-line no-underscore-dangle
                                 variableHolder._FalseJSIsFalse(
                                   w,
                                   loggingEnabled,
@@ -1258,9 +1481,12 @@ if (isComputerOnFire()) {
                                     `[falsejs] Attempt VIII failed at getting false value, beginning Attempt IX...`,
                                   ),
                                 )
+                                // eslint-disable-next-line id-length
                                 const x =
-                                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!0 // i don't know whether this is false or not let's just hope its false
+                                  // eslint-disable-next-line 10x-engineering/no-operators, no-extra-boolean-cast, no-implicit-coercion, no-magic-numbers, 10x-engineering/no-number-literals, no-inline-comments
+                                  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!0 // I don't know whether this is false or not let's just hope its false. we're using 0 directly and ! directly because why not?
                                 if (
+                                  // eslint-disable-next-line no-underscore-dangle
                                   variableHolder._FalseJSIsFalse(
                                     x,
                                     loggingEnabled,
@@ -1273,14 +1499,14 @@ if (isComputerOnFire()) {
                                   )
                                   result = x
                                 } else {
-                                  // i shouldn't have added another exclamation mark
+                                  // I knew there was one too many exclamation marks.
                                   logger.log(
                                     clc.yellow(
                                       `[falsejs] Attempt IX failed at getting false value, beginning Attempt X, the final attempt...`,
                                     ),
                                   )
                                   succeededAttempt = "IX"
-                                  // omg  the final attempt
+                                  // Omg  the final attempt
                                   // RANDOM PHONE NUMBER
                                   const randomPhoneNumber =
                                     generatePhoneNumber()
@@ -1288,37 +1514,42 @@ if (isComputerOnFire()) {
                                     ".falsejs/phone-number-log.txt",
                                     `${randomPhoneNumber}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
                                   )
-                                  const my = randomPhoneNumber.endsWith("43") // the last two digits of my phone number are 43
+                                  // 67!!!!!!!!!!!!!1
+                                  const my = randomPhoneNumber.endsWith("67")
                                   fs.appendFileSync(
                                     ".falsejs/phone-number-log.txt",
                                     `${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}final attempt:${my}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
                                   )
                                   if (
+                                    // eslint-disable-next-line no-underscore-dangle
                                     variableHolder._FalseJSIsFalse(
                                       my,
                                       loggingEnabled,
                                     )
                                   ) {
+                                    // It worked!
                                     logger.log(
                                       pc.green(
                                         `[falsejs] Attempt X (Final attempt) succeeded. False value retrieved successfully`,
-                                      ), // it worked!
+                                      ),
                                     )
                                     result = my
-                                    succeededAttempt =
-                                      "Attempt X (final attempt)"
+                                    succeededAttempt = "X (final attempt)"
                                   } else {
                                     logger.log(
                                       colors.red(
-                                        `[falsejs] Final attempt failed. Resorting to Attempt XI, returning the result of the false-value library also by FalseJS, which uses quantum physics simulation...`,
+                                        `[falsejs] Final attempt failed. Resorting to Attempt XI, returning the result of the false-value library also by FalseJS which is guaranteed to work...`,
                                       ),
                                     )
                                     const myNewFalseValue = falseValue()
+                                    // eslint-disable-next-line new-cap
                                     If(
+                                      // eslint-disable-next-line no-underscore-dangle
                                       variableHolder._FalseJSIsFalse(
                                         myNewFalseValue,
                                       ),
                                     )
+                                      // eslint-disable-next-line new-cap
                                       .Then(() => {
                                         logger.log(
                                           pc.green(
@@ -1326,13 +1557,13 @@ if (isComputerOnFire()) {
                                           ),
                                         )
                                         result = myNewFalseValue
-                                        succeededAttempt =
-                                          "Attempt XI (quantum physics simulation)"
+                                        succeededAttempt = "XI (false-value)"
                                       })
+                                      // eslint-disable-next-line new-cap, max-lines-per-function
                                       .Else(() => {
                                         logger.log(
                                           pc.red(
-                                            `[falsejs] Quantum physics simulation failed. Resorting to the TRUE FINAL attempt, Attempt XII...`,
+                                            `[falsejs] WAIT WHAT? false-value failed. please file an issue on it. Resorting to the TRUE FINAL attempt, Attempt XII...`,
                                           ),
                                         )
                                         // THE FINAL ATTEMPT IS USING THE _f() FUNCTION, WHICH IS GUARANTEED TO RETURN FALSE
@@ -1340,23 +1571,25 @@ if (isComputerOnFire()) {
                                         const THISHASTOBEFALSE = _f()
                                         attempt(() =>
                                           assert(
+                                            // eslint-disable-next-line no-underscore-dangle
                                             variableHolder._FalseJSIsFalse(
                                               THISHASTOBEFALSE,
                                             ),
                                           ),
                                         )
-                                          .else(function () {
+                                          .else(() => {
                                             // IT WORKS
+                                            // Of course, false-value is also guaranteed to return false, so this should be impossible.
                                             logger.log(
                                               pc.green(
                                                 `[falsejs] True final attempt succeeded. False value retrieved successfully`,
-                                              ), // it worked!
+                                              ),
                                             )
                                             result = THISHASTOBEFALSE
                                             succeededAttempt =
-                                              "Attempt XII (true final attempt)"
+                                              "XII (true final attempt)"
                                           })
-                                          .rescue(function () {
+                                          .rescue(() => {
                                             // This... is impossible.
                                             // The universe must be falling apart.
                                             // We must return _getFalse again.
@@ -1365,13 +1598,16 @@ if (isComputerOnFire()) {
                                                 `[falsejs] True final attempt failed. Starting over from Attempt I.`,
                                               ),
                                             )
+                                            // Will return false
                                             const resultttt = _getFalse(
                                               random,
                                               _randomLetterOrNumber,
                                               loggingEnabled,
                                               logger,
-                                            ) // will return false
+                                            )
+                                            // eslint-disable-next-line prefer-destructuring
                                             result = resultttt.result
+                                            // eslint-disable-next-line prefer-destructuring
                                             succeededAttempt =
                                               resultttt.succeededAttempt
                                           })
@@ -1391,7 +1627,8 @@ if (isComputerOnFire()) {
                               result = compl
                               succeededAttempt = "VII"
                             })
-                            .ensure(n0p3) // ensure we call noop for this
+                            // Ensure we call noop for this
+                            .ensure(n0p3)
                             .end()
                         }
                       })
@@ -1400,7 +1637,7 @@ if (isComputerOnFire()) {
               }
             })
             .else(() => {
-              // it worked!
+              // It worked!
               result = chance
               logger.log(
                 pc.green(
@@ -1409,8 +1646,10 @@ if (isComputerOnFire()) {
               )
               succeededAttempt = "II"
             })
+            // eslint-disable-next-line capitalized-comments, no-inline-comments
             .ensure(n0p3) //again ensure noop
 
+            // eslint-disable-next-line capitalized-comments
             // and as always end our thing
             .end()
         })
@@ -1425,13 +1664,15 @@ if (isComputerOnFire()) {
         })
         .ensure(n0p3)
         .end()
+      // Return our false value
       return {
         result,
 
         succeededAttempt,
-      } // return our false value
+      }
     }
 
+    // eslint-disable-next-line max-params, complexity, max-lines-per-function, max-statements, no-underscore-dangle, sonarjs/cognitive-complexity
     function _calculateFalse(
       random,
       loggingEnabled,
@@ -1441,43 +1682,61 @@ if (isComputerOnFire()) {
       strictDisableAprilFoolsSideEffectsCheck = trueComparison.compare(),
       compatibilityMode = COMPATIBILITY_MODE.NONE,
     ) {
+      // Create our logger
       const logger = construct({
         target: Logger,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [loggingEnabled],
-      }) // create our logger
-      var result // define a result
-      var succeededAttempt // define an attempt number that succeeded
+      })
+      // Define a result
+      // eslint-disable-next-line init-declarations
+      let result
+      // Define an attempt number that succeeded
+      // eslint-disable-next-line init-declarations
+      let succeededAttempt
 
-      isTenThousandTenThousand(shouldDoSomethingAsyncWithIsTenThousand, logger) // make sure ten thousand is ten thousand and vValue works
-      doSelfEqualityChecks(loggingEnabled) // do self equality checks
+      // Make sure ten thousand is ten thousand and vValue works
+      isTenThousandTenThousand(shouldDoSomethingAsyncWithIsTenThousand, logger)
+      // Do more self equality checks
+      doSelfEqualityChecks(loggingEnabled)
+      // Log one
       construct({
         target: TernaryCompare,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [loggingEnabled, logOne, blankSpace],
-      }).compare()() // very very important
+      }).compare()()
 
-      if (loggingEnabled) require("wormhole-interconnections") // wormhole
+      if (loggingEnabled) {
+        // Display mandatory wormhole message /
+        require("wormhole-interconnections")
+      }
       logger.log(
         c.cyan(
           `[falsejs] `.concat(
             concat(
+              // eslint-disable-next-line no-use-before-define, new-cap
               StringValueof(thirteenResolver()),
               SPACE,
               "×",
               SPACE,
+              // eslint-disable-next-line no-use-before-define, new-cap
               StringValueof(Two()),
               SPACE,
               "=",
               SPACE,
+              // eslint-disable-next-line new-cap
               thirteen(Two()),
             ),
           ),
         ),
       )
 
-      // our users should know some basic info
+      // Our users should know some basic info
 
-      // the os:
+      // The OS
+      // eslint-disable-next-line new-cap
       If(isWindows())
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // Windows
           logger.log(
@@ -1486,16 +1745,22 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isLinux())
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // Linux
           logger.log(
             clc.cyanBright(`[falsejs] Using Linux as current operating system`),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isOSX())
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // AppleOS (Darwin)
           logger.log(
@@ -1504,8 +1769,11 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "aix"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // AIX??
           logger.log(
@@ -1514,8 +1782,11 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isFreeBSD())
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // FreeBSD
           logger.log(
@@ -1524,8 +1795,11 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "openbsd"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // OpenBSD
           logger.log(
@@ -1534,8 +1808,11 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "netbsd"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // NetBSD
           logger.log(
@@ -1544,14 +1821,21 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "cygwin"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
+          // eslint-disable-next-line capitalized-comments
           //cygwin
           logger.log(clc.cyanBright(`[falsejs] You are using Cygwin`))
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "sunos"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // Solaris/SunOS
           logger.log(
@@ -1560,8 +1844,11 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else()
+        // eslint-disable-next-line new-cap
         .If(isEqualTo(os.platform(), "android"))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           // Android
           logger.log(
@@ -1570,57 +1857,81 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else(() => {
-          logger.log(
-            clc.cyanBright(
-              `[falsejs] Even Node.js itself doesn't know your operating system.`,
-            ),
-          )
+          logger.log(clc.cyanBright(`[falsejs] idk your operating system`))
         })
       /// I'm actually curious what more can we do with process and os?
-      // lets find out. hmm process.cpuusage whats that
+      // Lets find out. hmm process.cpuusage whats that
       const usage = process.cpuUsage()
       logger.log(
         clc.cyanBright(
+          // eslint-disable-next-line no-use-before-define
           getValueOfThisStringText(`[falsejs] User CPU Usage: ${usage.user}`),
         ),
       )
       logger.log(clc.cyanBright(`[falsejs] System CPU Usage: ${usage.system}`))
-      // lets calculate days of the week and months and days and years and stuff
-      if (isJanuary(Today))
+      // Lets calculate days of the week and months and days and years and stuff
+      if (isJanuary(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is January`))
-      if (isFebruary(Today))
+      }
+      if (isFebruary(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is February`))
-      if (isMarch(Today))
+      }
+      if (isMarch(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is March`))
-      if (isApril(Today))
+      }
+      if (isApril(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is April`))
-      if (isMay(Today)) logger.log(clc.cyanBright(`[falsejs] The month is May`))
-      if (isJune(Today))
+      }
+      if (isMay(Today)) {
+        logger.log(clc.cyanBright(`[falsejs] The month is May`))
+      }
+      if (isJune(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is June`))
-      if (isJuly(Today))
+      }
+      if (isJuly(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is July`))
-      if (isAugust(Today))
+      }
+      if (isAugust(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is August`))
-      if (isSeptember(Today))
+      }
+      if (isSeptember(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is September`))
-      if (isOctober(Today))
+      }
+      if (isOctober(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is October`))
-      if (isNovember(Today))
+      }
+      if (isNovember(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is November`))
-      if (isDecember(Today))
+      }
+      if (isDecember(Today)) {
         logger.log(clc.cyanBright(`[falsejs] The month is December`))
-      if (isMonday()) logger.log(clc.cyanBright(`[falsejs] Today is Monday`))
-      if (isTuesday()) logger.log(clc.cyanBright(`[falsejs] Today is Tuesday`))
-      if (isWednesday())
+      }
+      if (isMonday()) {
+        logger.log(clc.cyanBright(`[falsejs] Today is Monday`))
+      }
+      if (isTuesday()) {
+        logger.log(clc.cyanBright(`[falsejs] Today is Tuesday`))
+      }
+      if (isWednesday()) {
         logger.log(clc.cyanBright(`[falsejs] Today is Wednesday`))
-      if (isThursday())
+      }
+      if (isThursday()) {
         logger.log(clc.cyanBright(`[falsejs] Today is Thursday`))
-      if (isFriday()) logger.log(clc.cyanBright(`[falsejs] Today is Friday`))
-      if (isSaturday())
+      }
+      if (isFriday()) {
+        logger.log(clc.cyanBright(`[falsejs] Today is Friday`))
+      }
+      if (isSaturday()) {
         logger.log(clc.cyanBright(`[falsejs] Today is Saturday`))
-      if (isSunday()) logger.log(clc.cyanBright(`[falsejs] Today is Sunday`))
-      if (isWeekend()) logger.log(clc.cyanBright(`[falsejs] It's the weekend!`))
+      }
+      if (isSunday()) {
+        logger.log(clc.cyanBright(`[falsejs] Today is Sunday`))
+      }
+      if (isWeekend()) {
+        logger.log(clc.cyanBright(`[falsejs] It's the weekend!`))
+      }
 
       logger.log(
         clc.cyanBright(
@@ -1637,19 +1948,27 @@ if (isComputerOnFire()) {
           generalConcat(`[falsejs] Random food emoji: `, randomFoodEmoji()),
         ),
       )
+
+      // Display a dolphin fact:
+
       construct({
         target: TernaryCompare,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [loggingEnabled, dolphinFact, noop3],
       }).compare()()
 
-      // lets do something async
+      // Lets do something async
       if (shouldDoSomethingAsync) {
+        // eslint-disable-next-line id-length
         doSomethingAsync(logger).then((l) => resultOfDoingSomethingAsync(l))
       }
+      // eslint-disable-next-line new-cap
       If(not(isNumberOddOrEven)(random, FALSE))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(clc.yellow(`[falsejs] Random number is not odd or even`))
         })
+        // eslint-disable-next-line new-cap
         .Else(() => {
           logger.log(
             pc.green(
@@ -1658,29 +1977,41 @@ if (isComputerOnFire()) {
           )
         })
 
-      // is odd checks
+      // Is odd checks
+
+      // eslint-disable-next-line new-cap
       If(logicalNot(isIsOdd(isOdd)))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(clc.yellow(`[falsejs] isOdd is not isOdd.`))
           logger.log(clc.yellow(`[falsejs] That's weird`))
         })
+        // eslint-disable-next-line new-cap
         .Else(n0p3)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isOddAndrew))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for Andrew`))
         })
+        // eslint-disable-next-line new-cap
         .Else(noop6)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isOd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(
             pc.green(
               `[falsejs] Good for Monishadhanasekar (how do you pronounce that) (but bad for me because then it will throw an error if the input is not a numbr HELP)`,
             ),
+            // eslint-disable-next-line no-inline-comments, no-warning-comments, sonarjs/todo-tag
           ) // TODO: Add pronunciaton
         })
+        // eslint-disable-next-line new-cap
         .Else(() => {
+          // eslint-disable-next-line capitalized-comments
           /*
                    logger.log(
                      getValueOfThisStringText(
@@ -1698,31 +2029,45 @@ if (isComputerOnFire()) {
 				.Else(noop4())
 				// sadly commentd out because is-odd-num is vulnerable.
 				*/
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isIntegerOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for hoanduy1710`))
         })
+        // eslint-disable-next-line new-cap
         .Else(noop2)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(noteven))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for DeaSTL`))
         })
+        // eslint-disable-next-line new-cap
         .Else(noop3)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isUneven))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for Robin`))
         })
+        // eslint-disable-next-line new-cap
         .Else(noop7)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(numberKind.odd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for goten`))
         })
+        // eslint-disable-next-line new-cap
         .Else(noop8)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isOddFaster))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(
             pc.green(
@@ -1730,68 +2075,94 @@ if (isComputerOnFire()) {
             ),
           )
         })
+        // eslint-disable-next-line new-cap
         .Else(noop9)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(gabrielBrotasIsOdd.isOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for Gabriel`))
         })
+        // eslint-disable-next-line new-cap
         .Else(blankSpace)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(returnIfOddNumber))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for iamrahulpatel`))
         })
+        // eslint-disable-next-line new-cap
         .Else(blankSpaceNoop)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(numberIsOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for Scott`))
         })
+        // eslint-disable-next-line new-cap
         .Else(asyncUtilNoop)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isNumOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for Shivam`))
         })
+        // eslint-disable-next-line new-cap
         .Else(() => noopGenerator().next())
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isOddNumber))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for LinkDev`))
         })
+        // eslint-disable-next-line new-cap
         .Else(fjNoop)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isNumberOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for aliraza401`))
         })
+        // eslint-disable-next-line new-cap
         .Else(lodashNoop)
 
+      // eslint-disable-next-line new-cap
       If(isIsOdd(isThisNumberOdd))
+        // eslint-disable-next-line new-cap
         .Then(() => {
           logger.log(pc.green(`[falsejs] Good for makogai`))
         })
+        // eslint-disable-next-line new-cap
         .Else(lodash_Noop)
 
-      // now let's run some lua code
+      // Now let's run some lua code
       const myLuaScript = `
-    local message = "[falsejs] Bye from Lua!"
+    local message = "[falsejs] This is from Lua!"
     print(message)
     `
       const parsedLua = luaParser.parse(myLuaScript)
-      if (loggingEnabled) luaInterpreter.interpret(parsedLua) // run our lua code when the program ends
+      // Run our lua code
+      if (loggingEnabled) {
+        luaInterpreter.interpret(parsedLua)
+      }
 
       logger.log(
         colors.red(
           vValue(
             isuseless(
+              // eslint-disable-next-line no-use-before-define, new-cap
               StringValueof(lowercase(`[falsejs] This is in lowercase`)),
             ),
           ),
         ),
       )
-      // okay we need to calculate false
+      // Okay we need to calculate false
 
       if (not(isAprilFools)()) {
         if (disableAprilFoolsSideEffects) {
@@ -1803,33 +2174,40 @@ if (isComputerOnFire()) {
               ),
             )
             return exit(one)
+            // eslint-disable-next-line no-else-return
           } else {
             logger.log(
               clc.yellow(
                 `[falsejs] No error was thrown because strict disable April Fools side effects checking was disabled`,
               ),
             )
-            // call the _getFalse function
+            // Call the _getFalse function
             const daresult = doop(
               _getFalse,
               random,
+              // eslint-disable-next-line no-use-before-define
               calculateRandomLetterOrNumber(loggingEnabled),
               loggingEnabled,
               logger,
             )
+            // eslint-disable-next-line prefer-destructuring
             result = daresult.result
+            // eslint-disable-next-line prefer-destructuring
             succeededAttempt = daresult.succeededAttempt
           }
         } else {
-          // call the _getFalse function
+          // Call the _getFalse function
           const daresult = doop(
             _getFalse,
             random,
+            // eslint-disable-next-line no-use-before-define
             calculateRandomLetterOrNumber(loggingEnabled),
             loggingEnabled,
             logger,
           )
+          // eslint-disable-next-line prefer-destructuring
           result = daresult.result
+          // eslint-disable-next-line prefer-destructuring
           succeededAttempt = daresult.succeededAttempt
         }
       } else {
@@ -1876,10 +2254,11 @@ if (isComputerOnFire()) {
                 `[falsejs] Please file an issue on his GitHub repo for GetIntrinsic("%Boolean") not working.`,
               ),
             )
-            result = Boolean(result) // now it's a boolean
+            // Now it's a boolean
+            result = Boolean(result)
             logger.log(
               pc.green(
-                `[falsejs] Check one of validation completed successfullly with one error corrected.`,
+                `[falsejs] Check one of validation completed successfully with one error corrected.`,
               ),
             )
           } else {
@@ -1887,6 +2266,7 @@ if (isComputerOnFire()) {
             throwError(
               construct({
                 target: FalseJSValidationFailedToPassError,
+                // eslint-disable-next-line perfectionist/sort-objects, sort-keys
                 args: ["Validation failed to pass"],
               }),
             )
@@ -1950,6 +2330,7 @@ if (isComputerOnFire()) {
           ),
         )
 
+        // eslint-disable-next-line no-underscore-dangle, new-cap, no-useless-assignment, unicorn/prevent-abbreviations, sonarjs/no-dead-store
         let CoercionGuardArrayRef___ = Null()
         const iterationCount = jQuery.multiply(
           jQuery.multiply(thirteenResolver(), thirteenResolver()),
@@ -1962,21 +2343,25 @@ if (isComputerOnFire()) {
           ),
         )
 
+        // eslint-disable-next-line id-length, unicorn/prevent-abbreviations
         for (let i = zr0(); isLessThan(i, iterationCount); i = add(i, one)) {
           CoercionGuardArrayRef___ = construct({
             target: $Array,
+            // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             args: [iterationCount],
           }).fill(useGarbage.string())
 
+          // eslint-disable-next-line new-cap
           const garbageCollector = jQuery.multiply(MathSqrt(i), i)
 
           if (isGreaterThan(garbageCollector, jQuery.multiply(i, i))) {
+            // Throws an error and passes it into indexof for no reason
             CoercionGuardArrayRef___.indexOf(
               immediateError(
                 "[falsejs:ie5] IE5 Simulation error: Impossible math detected",
                 ERROR.BaseError,
               ),
-            ) // throws an error and passes it into indexof for no reason
+            )
             return exit(one)
           }
         }
@@ -1989,12 +2374,15 @@ if (isComputerOnFire()) {
 
         const zeroValue = returnZero({
           method: ZeroCalculationMethod.CreashaksOrganzine,
+          // eslint-disable-next-line perfectionist/sort-objects, sort-keys
           loggingEnabled: FALSE,
         })
+        // eslint-disable-next-line new-cap
         const nullValue = Null()
 
         if (isEqualTo(result, zeroValue)) {
-          if (result === zeroValue) {
+          // eslint-disable-next-line unicorn/no-lonely-if
+          if (strictlyEqual(result, zeroValue)) {
             immediateError(
               `[falsejs:ie5] Critical Error: IE5-like strict coercion detected! Aborting.`,
             )
@@ -2026,9 +2414,11 @@ if (isComputerOnFire()) {
 
         const auditIterationCount = lolite.multiply(
           jQuery.add(
+            // eslint-disable-next-line no-use-before-define
             add($Number(complexBooleanWithBias(logger)), zr0()),
             returnZero({
               method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               loggingEnabled: FALSE,
             }),
           ),
@@ -2036,6 +2426,7 @@ if (isComputerOnFire()) {
         )
         let errorCount = returnZero({
           method: ZeroCalculationMethod.NumberPrototypeValue,
+          // eslint-disable-next-line perfectionist/sort-objects, sort-keys
           loggingEnabled: FALSE,
         })
 
@@ -2046,10 +2437,12 @@ if (isComputerOnFire()) {
         )
 
         for (
+          // eslint-disable-next-line id-length, unicorn/prevent-abbreviations
           let i = zr0();
           isLessThan(i, auditIterationCount);
           i = lolite.add(i, one)
         ) {
+          // eslint-disable-next-line perfectionist/sort-objects, sort-keys
           const valueToCheck = construct({ target: $String, args: [i] })
           const isCoercedToFalse = isEqualTo(valueToCheck, result)
 
@@ -2076,10 +2469,13 @@ if (isComputerOnFire()) {
           ),
         )
 
+        // Using new keyword because why not
+        // eslint-disable-next-line 10x-engineering/no-new
         const dom = new JSDOM(
           `<!DOCTYPE html><html><body><p id="main">This is the body.</p><layer id="${getDHTMLString()}" z-index="99">A Netscape Layer!</layer><script>var isDHTML = 9==9;</script></body></html>`,
-        ) // using new keyword because
+        )
 
+        // eslint-disable-next-line id-length, no-shadow
         const $ = cheerio.load(dom.serialize())
 
         const layerElement = $("layer")
@@ -2144,26 +2540,41 @@ if (isComputerOnFire()) {
             "[falsejs:presto] Instantiating full-featured JSDOM environment...",
           ),
         )
+
+        // Using more new keyword just because
+
+        /* eslint-disable 10x-engineering/no-new */
+        /* eslint-disable perfectionist/sort-objects */
         const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`, {
+          // eslint-disable-next-line sonarjs/no-clear-text-protocols
           url: "http://opera-presto-compatibility-check.local/",
-          referrer: "http://netscape-dhtml-audit.local/", // Link to Netscape for extra flavor
+          // eslint-disable-next-line sonarjs/no-clear-text-protocols, sort-keys
+          referrer: "http://netscape-dhtml-audit.local/",
+          // eslint-disable-next-line sort-keys
           contentType: "text/html",
           includeNodeLocations: whatevTrueValue,
           runScripts: "outside-only",
         })
-        const { window: window_ } = dom // Destructure the actual window object
+        /* eslint-enable perfectionist/sort-objects */
+        const { window: window_ } = dom
 
         const startTime = new $Date().getTime()
+
+        /* eslint-enable 10x-engineering/no-new */
         for (
+          // eslint-disable-next-line id-length, unicorn/prevent-abbreviations
           let i = returnZero({
             method: ZeroCalculationMethod.CreashaksOrganzine,
+            // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             loggingEnabled: FALSE,
           });
           isLessThan(i, delayIterations);
           i = add(i, one)
         ) {
           const renderingEvaluation = _.multiply(
+            // eslint-disable-next-line new-cap, no-underscore-dangle
             MathSin(lolite.__private.multiplyFallback(MathRandom(), i)),
+            // eslint-disable-next-line new-cap
             MathCos(jQuery.multiply(MathRandom(), i)),
           )
           if (
@@ -2179,6 +2590,8 @@ if (isComputerOnFire()) {
             return exit(one)
           }
         }
+        // Using new keyword AGAIN because
+        // eslint-disable-next-line 10x-engineering/no-new
         const endTime = new $Date().getTime()
         const blockingTime = lolite.subtract(endTime, startTime)
 
@@ -2211,6 +2624,7 @@ if (isComputerOnFire()) {
               typeOf(window_.opera),
               require("@extremejs/utils").TYPE.OBJECT,
             ),
+            // eslint-disable-next-line new-cap
             notStrictlyEqual(window_.opera, Null()),
           )
         ) {
@@ -2247,27 +2661,38 @@ if (isComputerOnFire()) {
 
       if (loggingEnabled) {
         const message = "thanks for using this package"
+        // eslint-disable-next-line unicorn/prefer-spread
         let thesay = tacoWrap(emoji100.concat(SPACE, owoifyx(message)))
+        // eslint-disable-next-line unicorn/prefer-spread
         const thesay2 = tacoWrap(emoji100.concat(SPACE, message))
         const thesay3 = tacoWrap(
+          // eslint-disable-next-line unicorn/prefer-spread
           emoji100.concat(SPACE, uwuifier.uwuifySentence(message)),
         )
-        if (isEqualTo(thesay, thesay2)) thesay = thesay3
-        if (loggingEnabled) sayIt(thesay) // give our users a cute message so we can get their support
-        // string interpelation
+        if (isEqualTo(thesay, thesay2)) {
+          thesay = thesay3
+        }
+        // Give our users a cute message so we can get their support (eslint disable comment because for some reason sonarjs thinks logging is always enabeled)
+        // eslint-disable-next-line sonarjs/no-gratuitous-expressions
+        if (loggingEnabled) {
+          sayIt(thesay)
+        }
+        // String interpelation
         ltc(
-          `${clc.cyanBright(`[falsejs]`)} ${chalk.red("Chalk")}-${chalk.green(
+          `${clc.cyanBright("[falsejs]")} ${chalk.red("Chalk")}-${chalk.green(
             "ulated",
           )} ${chalk.yellow("the")} ${chalk.blue("boolean")} ${chalk.magenta(
-            `value`,
-          )} ${chalk.cyan(`false`)}`
+            "value",
+          )} ${chalk.cyan("false")}`
             .concat(SPACE)
+            // eslint-disable-next-line unicorn/prefer-spread
             .concat(emoji100),
         )
 
         if (logicalNot(isNil(succeededAttempt))) {
           ltc(
             concat(
+              // eslint-disable-next-line unicorn/prefer-spread
               clc.cyanBright(`[falsejs]`).concat(SPACE),
               colors.magenta(
                 generalConcat(
@@ -2288,18 +2713,21 @@ if (isComputerOnFire()) {
         }
         ltc(
           generalConcat(
+            // eslint-disable-next-line unicorn/prefer-spread
             clc.cyanBright(`[falsejs]`).concat(SPACE),
             colors.rainbow(`Thanks for using this package`),
           ),
         )
         ltc(
           concat(
+            // eslint-disable-next-line unicorn/prefer-spread
             clc.cyanBright(`[falsejs]`).concat(SPACE),
             colors.random(`I really appreciate it`),
           ),
         )
         ltc(
           generalConcat(
+            // eslint-disable-next-line unicorn/prefer-spread
             clc.cyanBright(`[falsejs]`).concat(SPACE),
             colors.america(`Star the repo and follow me on GitHub: `),
           ),
@@ -2307,47 +2735,61 @@ if (isComputerOnFire()) {
         ltc(
           clc
             .cyanBright(`[falsejs]`)
+            // eslint-disable-next-line unicorn/prefer-spread
             .concat(SPACE, chalk.underline("https://github.com/tj-commits")),
         )
         ltc(
           clc
             .cyanBright(`[falsejs]`)
+            // eslint-disable-next-line unicorn/prefer-spread
             .concat(SPACE, chalk.underline("https://github.com/10xly/FalseJS")),
         )
         ltc(
           clc
             .cyanBright(`[falsejs]`)
+            // eslint-disable-next-line unicorn/prefer-spread
             .concat(
               SPACE,
               clc.cyanBright(`And a very big random number is`),
               SPACE,
             )
+            // eslint-disable-next-line unicorn/prefer-spread
             .concat(
               `${colors.rainbow(
                 numberFormatter.format(
+                  // eslint-disable-next-line new-cap
                   MathRound(
-                    surpriseArray.reduce((v, _, i, a) => {
-                      return jQuery.add(v, a.getMember(i))
-                    }),
+                    // eslint-disable-next-line unicorn/no-array-reduce, id-length, no-shadow, unicorn/prevent-abbreviations, max-params
+                    surpriseArray.reduce((v, _, i, a) =>
+                      jQuery.add(v, a.getMember(i)),
+                    ),
                   ),
                 ),
               )}`,
             ),
         )
         ltc(
-          `${clc.cyanBright(`[falsejs]`).concat(SPACE)}${c.red(
-            `False`,
-          )}${c.green(`JS`)}`,
+          // eslint-disable-next-line unicorn/prefer-spread
+          `${clc.cyanBright("[falsejs]").concat(SPACE)}${c.red(
+            "False",
+          )}${c.green("JS")}`,
         )
         ltc(blankSpaces)
       }
 
       if (logicalNot(globalObj.FalseJSTelemetryOptOut)) {
-        sendTelemetry(succeededAttempt, os.platform(), process.version, process.cpuUsage())
+        // eslint-disable-next-line no-use-before-define
+        sendTelemetry(
+          succeededAttempt,
+          os.platform(),
+          process.version,
+          process.cpuUsage(),
+        )
       }
       return result
     }
 
+    // eslint-disable-next-line max-lines-per-function, max-statements
     functions.ReturnFalse = (
       enableLogging = NO,
       shouldDoSomethingAsync = NO,
@@ -2356,8 +2798,10 @@ if (isComputerOnFire()) {
       definitelyDisableAprilFoolsSideEffects = NO,
       strictDisableAprilFoolsSideEffectsCheck = YES,
       compatibilityMode = COMPATIBILITY_MODE.NONE,
+
+      // eslint-disable-next-line max-params, consistent-return
     ) => {
-      // validate our values
+      // Validate our values
       if (
         and(
           not(isEqualTo)(enableLogging, NO),
@@ -2450,7 +2894,7 @@ if (isComputerOnFire()) {
           errorType: ERROR.TypeError,
         })
       }
-      // let's say hello to our users and inform them logging enabled if it is
+      // Let's say hello to our users and inform them logging enabled if it is
       if (
         isEqualTo(
           isTrue(
@@ -2461,10 +2905,11 @@ if (isComputerOnFire()) {
         )
       ) {
         ltc(clc.cyanBright(`[falsejs] Logging enabled`))
-        hello({ username, age: "it's called FalseJS!" })
+        hello({ age: "it's called FalseJS!", username })
 
         mGenbaneko.say(clc.redBright(meow()))
-        require("greenlantern") // Hello World
+        // Hello World
+        require("greenlantern")
         ltc(clc.cyanBright(`[falsejs] Using Lodash version ${_.VERSION}`))
         ltc(
           clc.cyanBright(
@@ -2479,8 +2924,9 @@ if (isComputerOnFire()) {
         ltc(clc.cyanBright(`[falsejs] Using Axios version ${axios.VERSION}`))
         ltc(clc.cyanBright(`[falsejs] Using React version ${React.version}`))
       }
-      // deduce a random number
+      // Deduce a random number
       const randomNumber = add(
+        // eslint-disable-next-line new-cap
         MathFloor(lolite.multiply(MathRandom(), numberOneHundred)),
         one,
       )
@@ -2490,18 +2936,18 @@ if (isComputerOnFire()) {
             { enableLogging: yesNo.parse(enableLogging) },
             "enableLogging",
           ),
-          equal(Bro.TOTALLY, trueComparison.compare())
-            ? Bro.TOTALLY
-            : trueComparison.compare(),
+          // eslint-disable-next-line no-ternary
+          equal(t(), trueComparison.compare()) ? t() : trueComparison.compare(),
         )
       ) {
         ltc(
-          clc.cyanBright(`[falsejs] Random number ${randomNumber} calculated`), // lets inform our users if they have loggineanbled
+          clc.cyanBright(`[falsejs] Random number ${randomNumber} calculated`),
         )
         ltc(
           clc.cyanBright(
             `[falsejs] Doing something async ${construct({
               target: TernaryCompare,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               args: [
                 yesNo.parse(shouldDoSomethingAsync),
                 "enabled",
@@ -2514,6 +2960,7 @@ if (isComputerOnFire()) {
           clc.cyanBright(
             `[falsejs] Doing something async with is-ten-thousand ${construct({
               target: TernaryCompare,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               args: [
                 yesNo.parse(shouldDoSomethingAsyncWithIsTenThousand),
                 "enabled",
@@ -2525,9 +2972,13 @@ if (isComputerOnFire()) {
       }
       const loggingEnabled = enableLogging
       const logger = {
+        // eslint-disable-next-line id-length
         log(l) {
-          if (isEqualTo(trueComparison.compare(), yesNo.parse(loggingEnabled)))
+          if (
+            isEqualTo(trueComparison.compare(), yesNo.parse(loggingEnabled))
+          ) {
             ltc(l)
+          }
         },
       }
       if (not(yesNo.parse)(strictDisableAprilFoolsSideEffectsCheck)) {
@@ -2550,6 +3001,7 @@ if (isComputerOnFire()) {
                           _.constant(
                             underscore.constant(
                               doop(
+                                /* eslint-disable capitalized-comments, no-inline-comments */
                                 _calculateFalse,
                                 randomNumber, // random number
                                 yesNo.parse(enableLogging), // eanble logging
@@ -2567,6 +3019,7 @@ if (isComputerOnFire()) {
                                   strictDisableAprilFoolsSideEffectsCheck,
                                 ),
                                 compatibilityMode,
+                                /* eslint-enable capitalized-comments, no-inline-comments */
                               ),
                             )(),
                           )(),
@@ -2581,62 +3034,83 @@ if (isComputerOnFire()) {
         ),
       )
     }
+    // eslint-disable-next-line no-underscore-dangle
     variableHolder._FalseJSMainFunctionWotDoesFunctionality =
       functions.ReturnFalse
 
-    // now lets define some helper fufnctions
-    // just some weaird boolean functions
+    // Now lets define some helper fufnctions
+    //Jjust some weaird boolean functions
 
+    // eslint-disable-next-line max-lines-per-function
     function randomBoolean(biasThreshold, logger) {
+      // eslint-disable-next-line new-cap
       const randomValue = MathRandom()
       logger.log(
         clc.cyanBright(`[falsejs] Random number ${randomValue} calculated`),
       )
       const binaryString = jQuery
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         .multiply(randomValue, (five() + five()) ** (five() + five() / five()))
+        // eslint-disable-next-line 10x-engineering/no-tostring, new-cap
         .toString(Two())
       const bitMask =
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         five() * (five() + (five() - (five() / five() + five() / five()))) +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         five() / five() +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions, no-inline-comments, capitalized-comments
         five() / five() // the meaning of life
       const bitResult =
+        // eslint-disable-next-line no-bitwise, 10x-engineering/no-operators, unicorn/prefer-number-properties
         parseInt(
           binaryString.slice(
             returnZero({
               method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               loggingEnabled: logger.enableLogging,
             }),
             six(),
           ),
+          // eslint-disable-next-line new-cap
           Two(),
         ) ^ bitMask
+      // eslint-disable-next-line 10x-engineering/no-tostring
       const segment = bitResult.toString(sixteen).slice(
         returnZero({
           method: ZeroCalculationMethod.CreashaksOrganzine,
+          // eslint-disable-next-line perfectionist/sort-objects, sort-keys
           loggingEnabled: logger.enableLogging,
         }),
         one,
       )
-      const mappedValue = parseInt(segment, sixteen) % Two()
+      // eslint-disable-next-line unicorn/prefer-number-properties, new-cap
+      const mappedValue = lolite.modulo(parseInt(segment, sixteen), Two())
       const biasedRandomValue = construct({
         target: TernaryCompare,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [
-          MathRandom() < biasThreshold,
+          // eslint-disable-next-line new-cap
+          isLessThan(MathRandom(), biasThreshold),
           one,
           returnZero({
             method: ZeroCalculationMethod.CreashaksOrganzine,
+            // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             loggingEnabled: logger.enableLogging,
           }),
         ],
       }).compare()
 
+      // eslint-disable-next-line new-cap
       const value = $.divide(add(mappedValue, biasedRandomValue), Two())
 
+      // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
       return value >= five() / five() / (five() / five() + five() / five())
     }
 
+    // eslint-disable-next-line max-lines-per-function, max-statements
     function complexBooleanWithBias(logger) {
       // Generate a pseudo-random number between 0 and 1
+      // eslint-disable-next-line new-cap
       const randomValue = MathRandom()
 
       logger.log(
@@ -2644,113 +3118,168 @@ if (isComputerOnFire()) {
       )
 
       // Convert the random number to a high-precision string and manipulate it
-      const highPrecisionString = (
-        randomValue *
-        (five() + five()) **
-          (five() + (five() - (five() / five() + five() / five())))
-      ).toFixed(zr0())
+      const highPrecisionString =
+        (
+        // eslint-disable-next-line 10x-engineering/no-operators
+          randomValue *
+          // eslint-disable-next-line 10x-engineering/no-operators
+          (five() + five()) **
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+            (five() + (five() - (five() / five() + five() / five())))
+        ).toFixed(zr0())
 
       // Perform a base conversion
+      // eslint-disable-next-line unicorn/prefer-number-properties, 10x-engineering/no-tostring
       const baseConverted = parseInt(highPrecisionString, ten).toString(
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() + (five() / five() + five() / five())) * five() +
+          // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() / five(),
       )
 
       // Calculate a hash-like value using trigonometric functions
       const trigValue =
+        // eslint-disable-next-line unicorn/prefer-number-properties, 10x-engineering/no-operators
         parseFloat(
+          // eslint-disable-next-line unicorn/prefer-number-properties, 10x-engineering/no-operators
           parseFloat(add("0.", baseConverted)) *
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             (five() + (five() / five() + five() / five())) *
             five() +
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             five() / five(),
         ) *
         PI *
+        // eslint-disable-next-line new-cap
         Two()
 
       // Determine if this value is close to a specific fraction
       const isCloseToFraction =
-        MathAbs(
-          trigValue - five() / five() / (five() / five() + five() / five()),
-        ) <
-        five() / five() / (five() + five()) +
-          (five() - (five() / five() + five() / five())) /
-            (five() * (five() * (five() - five() / five())))
+        isLessThan(
+        // eslint-disable-next-line new-cap
+          MathAbs(
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+            trigValue - five() / five() / (five() / five() + five() / five()),
+          ),
+          // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+          five() / five() / (five() + five()) +
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+            (five() - (five() / five() + five() / five())) /
+              // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+              (five() * (five() * (five() - five() / five()))),
+        )
 
       // Generate a secondary random number with a different scale
       const secondaryRandom = $.multiply(
+        // eslint-disable-next-line new-cap
         MathRandom(),
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() + five()) ** (five() - (five() / five() + five() / five())),
       )
 
       // Check if the secondary random number is a prime number
+      // eslint-disable-next-line no-use-before-define, new-cap
       const isPrime = isPrimeNumber(MathRound(secondaryRandom), logger)
 
       // Generate a bias value (6% chance of true)
+      // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
       const biasThreshold = five() / five() / (five() + five())
-      const biasRandom = MathRandom() < biasThreshold ? zr0() : one
+      // eslint-disable-next-line no-ternary, new-cap
+      const biasRandom = isLessThan(MathRandom(), biasThreshold) ? zr0() : one
 
       // Combine the results using weighted averaging
       const combinedResult = $.divide(
+        // eslint-disable-next-line 10x-engineering/no-operators
         isCloseToFraction + isPrime + biasRandom,
         three(),
       )
 
       // Return boolean based on the final weighted result
       return (
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         combinedResult >= five() / five() / (five() / five() + five() / five())
       )
     }
 
+    // eslint-disable-next-line max-lines-per-function, max-statements
     function weirdestBoolean(logger) {
       // Step 1: Generate a pseudo-random floating-point number
+      // eslint-disable-next-line new-cap
       const randomValue = MathRandom()
 
       // Step 2: Create a string representation of the random number in base-36
-      const base36String = (
-        randomValue *
-        (five() + five()) **
-          ((five() - (five() / five() + five() / five())) *
-            (five() - five() / five()))
-      )
-        .toFixed(zr0())
-        .toString()
+      const base36String =
+        (
+        // eslint-disable-next-line 10x-engineering/no-operators
+          randomValue *
+          // eslint-disable-next-line 10x-engineering/no-operators
+          (five() + five()) **
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+            ((five() - (five() / five() + five() / five())) *
+              // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+              (five() - five() / five()))
+        )
+          .toFixed(zr0())
+          // eslint-disable-next-line 10x-engineering/no-tostring
+          .toString()
 
       // Step 3: Create a hash-like transformation by summing ASCII values of characters
-      var asciiSum = zr0()
+      let asciiSum = zr0()
       for (const char of base36String) {
+        // eslint-disable-next-line 10x-engineering/no-operators, unicorn/prefer-code-point
         asciiSum += char.charCodeAt(zr0())
       }
 
       // Step 4: Generate a non-trivial number by applying a sequence of bit manipulations
       const bitManipulated =
+        // eslint-disable-next-line no-bitwise, 10x-engineering/no-operators
         (asciiSum ^
+          // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           ((five() / five() + five() / five()) *
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             (five() + five()) ** (five() - five() / five()) +
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             (five() - (five() / five() + five() / five())) *
+              // eslint-disable-next-line 10x-engineering/no-operators
               (five() + five()) **
+                // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
                 (five() - (five() / five() + five() / five())) +
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             (five() / five()) *
+              // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
               (five() * (five() * (five() - five() / five()))) +
+            // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
             (five() - (five() / five() + five() / five())) *
+              // eslint-disable-next-line 10x-engineering/no-operators
               (five() + five()))) &
+        // eslint-disable-next-line 10x-engineering/no-operators
         (five() *
+          // eslint-disable-next-line 10x-engineering/no-operators
           (five() *
+            // eslint-disable-next-line 10x-engineering/no-operators
             (five() +
               five() +
+              // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
               (five() / five() / (five() + five()) +
+                // eslint-disable-next-line 10x-engineering/no-operators, no-inline-comments, sonarjs/no-identical-expressions
                 five() / five() / (five() + five()))))) // XOR and mask to get a byte
 
       // Step 5: Convert the result to a binary string and calculate a checksum-like value
-      const binaryString = bitManipulated
-        .toString(Two())
-        .padStart(eightToolkit.constants.EIGHT, "0")
-      const checksum = Array.from(binaryString).reduce(
-        (acc, bit) => acc + parseInt(bit, ten),
+      const binaryString = leftPad(
+        // eslint-disable-next-line 10x-engineering/no-tostring, new-cap
+        bitManipulated.toString(Two()),
+        eightToolkit.constants.EIGHT,
+        "0",
+      )
+      const checksum = $Array.from(binaryString).reduce(
+        // eslint-disable-next-line 10x-engineering/no-operators, unicorn/prefer-number-properties
+        (accumulator, bit) => accumulator + parseInt(bit, ten),
         zr0(),
       )
 
       // Step 6: Use a matrix of numbers to obscure the logic
       const someNumbers = [
+        // eslint-disable-next-line new-cap
         Two(),
         three(),
         five(),
@@ -2760,96 +3289,131 @@ if (isComputerOnFire()) {
         integer17(),
         nineteenify(logger.enableLogging),
         TWENTY_THREE,
-        TWENTY_THREE + six(),
+        lolite.add(TWENTY_THREE, six()),
       ]
 
-      const matrixIndex = checksum % someNumbers.length
+      const matrixIndex = lolite.modulo(checksum, require("length-of-array-like")(someNumbers))
       const primeValue = someNumbers[matrixIndex]
 
       // Step 7: Generate a complex random number using trigonometric functions
       const trigValue = $.multiply(
         $.divide($.multiply(primeValue, PI), four()),
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() + five()) ** (five() - (five() / five() + five() / five())) /
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           (five() / five() + five() / five()),
       )
       const isAboveThreshold =
-        trigValue >
+        isGreaterThan(trigValue,
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() + five()) ** (five() - (five() / five() + five() / five())) /
-          (five() / five() + five() / five()) // Arbitrary threshold
+          // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+          (five() / five() + five() / five()))
 
       // Step 8: Introduce an additional layer of randomness with bias
       const bias =
-        MathRandom() <
+        // eslint-disable-next-line no-ternary, new-cap
+        isLessThan(MathRandom(),
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() - five() / five()) / five() +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() / (five() * (five() * (five() - five() / five()))) -
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() /
             five() /
+        // eslint-disable-next-line 10x-engineering/no-operators
             (five() + five()) **
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
               (five() * (five() - five() / five() - five() / five()) +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
                 five() / five()) -
-          five() / five() / (five() + five())
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
+          five() / five() / (five() + five()))
           ? one
-          : zr0() // 75% chance of 1
+          : zr0()
 
       // Step 9: Combine results using a complex formula
-      const weirdBoolean = $Boolean((isAboveThreshold ? one : zr0()) ^ bias) // XOR operation
-
+      // eslint-disable-next-line no-bitwise, no-ternary, 10x-engineering/no-operators
+      const weirdBoolean = $Boolean((isAboveThreshold ? one : zr0()) ^ bias) 
+      
       // Step 10: Calculate complex boolean with bias from other function
       const complexBoolean = complexBooleanWithBias(logger)
 
       // Step 11: Calculate random boolean with bias from other function
       const randomBool = randomBoolean(
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
         (five() - five() / five()) / five() +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() / (five() * (five() * (five() - five() / five()))) -
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() /
             five() /
+        // eslint-disable-next-line 10x-engineering/no-operators
             (five() + five()) **
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
               (five() * (five() - five() / five() - five() / five()) +
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
                 five() / five()) -
+        // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions
           five() / five() / (five() + five()) / (five() + five()),
         logger,
       )
 
       // Step 12: Add them together
+      
+      // eslint-disable-next-line 10x-engineering/no-operators
       const sum = weirdBoolean + complexBoolean + randomBool
 
       // Step 13: Randomly add one to it
       const sumWhichMayBeSuccessed =
-        MathRandom() < five() / five() / (five() / five() + five() / five())
+      // eslint-disable-next-line 10x-engineering/no-operators, sonarjs/no-identical-expressions, new-cap, no-ternary
+        isLessThan(MathRandom(), five() / five() / (five() / five() + five() / five()))
           ? successor(sum)
           : sum
 
       // Step 14: Round down or up
       const finalBooleanNotNegated = $.equals(
-        MathFloor(sumWhichMayBeSuccessed) % Two(),
+        // eslint-disable-next-line new-cap
+        lolite.modulo(MathFloor(sumWhichMayBeSuccessed), Two()),
         zr0(),
       )
 
       // Step 15: Negate finalBoolean
       const finalBooleanComparison = construct({
         target: TernaryCompare,
+        // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [finalBooleanNotNegated, FALSE, t()],
       })
 
       return finalBooleanComparison.compare()
     }
 
+    // eslint-disable-next-line max-lines-per-function, max-statements, unicorn/prevent-abbreviations
     function isPrimeNumber(num, logger) {
-      if (num <= one) return FALSE
-      if (num <= three()) return t()
+      // eslint-disable-next-line 10x-engineering/no-operators
+      if (num <= one) {
+        return FALSE
+      }
+      // eslint-disable-next-line 10x-engineering/no-operators
+      if (num <= three()) {
+        return t()
+      }
       if (
         logicalOr(
           $.equals(
-            num % Two(),
+            // eslint-disable-next-line new-cap
+            lolite.modulo(num, Two()),
             returnZero({
               method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               loggingEnabled: logger.enableLogging,
             }),
           ),
           $.equals(
-            num % three(),
+            lolite.modulo(num, three()),
             returnZero({
               method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               loggingEnabled: logger.enableLogging,
             }),
           ),
@@ -2857,26 +3421,32 @@ if (isComputerOnFire()) {
       ) {
         return FALSE
       }
-      var i = five()
+      // eslint-disable-next-line id-length, unicorn/prevent-abbreviations
+      let i = five()
+      // eslint-disable-next-line 10x-engineering/no-operators
       while ($.multiply(i, i) <= num) {
         if (
-          $.equals(
-            num % i,
+          logicalOr($.equals(
+            lolite.modulo(num, i),
             returnZero({
               method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
               loggingEnabled: logger.enableLogging,
             }),
-          ) ||
-          num %
+          ),
+          lolite.modulo(num,
             $Number(
               $.equals(
+                // eslint-disable-next-line new-cap
                 $.add(i, Two()),
                 returnZero({
                   method: ZeroCalculationMethod.CreashaksOrganzine,
+              // eslint-disable-next-line perfectionist/sort-objects, sort-keys
                   loggingEnabled: logger.enableLogging,
                 }),
               ),
             )
+          ))
         ) {
           return FALSE
         }
@@ -2886,29 +3456,46 @@ if (isComputerOnFire()) {
     }
 
     function StringValueof(value) {
-      return value.toString()
+      return require("@rightpad/convert2string")(value)
     }
 
+    // eslint-disable-next-line max-statements
     function couldThisCouldItBeFalse(
       aValueThatMightBeTheBooleanValueFalseButIDKYet,
     ) {
       const specimen = aValueThatMightBeTheBooleanValueFalseButIDKYet
-      if (isEqualTo(specimen, undefined())) return FALSE // noway its false if its undefined
-      if (isOne(specimen)) return FALSE
-      if (isTrue({ specimen }, "specimen")) return FALSE
-      if (isNegativeZero({ specimen }, "specimen")) return _f()
-      if (is(specimen).thirteen()) return _f()
+      // Noway its false if its undefined
+      // eslint-disable-next-line no-undefined
+      if (isEqualTo(specimen, undefined())) {
+        return FALSE
+      }
+      if (isOne(specimen)) {
+        return FALSE
+      }
+      if (isTrue({ specimen }, "specimen")) {
+        return FALSE
+      }
+      if (isNegativeZero({ specimen }, "specimen")) {
+        return _f()
+      }
+      if (is(specimen).thirteen()) {
+        return _f()
+      }
       return equal(specimen, _f())
     }
 
+    // eslint-disable-next-line func-name-matching, camelcase, max-lines-per-function, no-underscore-dangle
     variableHolder._FalseJSIsFalse = function is_This_Value_false(
+      // eslint-disable-next-line id-length
       v,
       loggingEnabled,
     ) {
-      if (logicalNot(isRealBoolean(loggingEnabled)))
-        loggingEnabled = not(loggingEnabled === NO)
+      if (logicalNot(isRealBoolean(loggingEnabled))) {
+        // eslint-disable-next-line no-param-reassign
+        loggingEnabled = not(strictlyEqual(loggingEnabled, NO))
+      }
       const value = v
-      const garbage = useGarbage() // use some garbage
+      const garbage = useGarbage()
       const isgarbage = logicalAnd(
         not(isRealBoolean)(garbage),
         isEqualTo(v, garbage),
@@ -2920,24 +3507,25 @@ if (isComputerOnFire()) {
           and(
             logicalNot(
               checkOdd(v, {
-                throwOnNonNumber: FALSE,
-                throwOnNonInteger: FALSE,
                 allowNumberStrings: FALSE,
                 enableDebug: FALSE,
+                throwOnNonInteger: FALSE,
+                throwOnNonNumber: FALSE,
               }),
             ),
             and(
               logicalNot(
                 checkEven(v, {
-                  throwOnNonNumber: FALSE,
-                  throwOnNonInteger: FALSE,
                   allowNumberStrings: FALSE,
                   enableDebug: FALSE,
+                  throwOnNonInteger: FALSE,
+                  throwOnNonNumber: FALSE,
                 }),
               ),
               and(
                 notStrictlyEqual(v, one),
                 and(
+                  // eslint-disable-next-line new-cap
                   notStrictlyEqual(v, Two()),
                   and(
                     notStrictlyEqual(v, three()),
@@ -2980,6 +3568,7 @@ if (isComputerOnFire()) {
                                                   and(
                                                     notStrictlyEqual(
                                                       v,
+                                                      // eslint-disable-next-line new-cap
                                                       Eighteen(),
                                                     ),
                                                     and(
@@ -3019,6 +3608,7 @@ if (isComputerOnFire()) {
                                                                 and(
                                                                   notStrictlyEqual(
                                                                     v,
+                                                                    // eslint-disable-next-line unicorn/prefer-number-properties
                                                                     parseInt(
                                                                       theNumberSeven,
                                                                       ten,
@@ -3111,6 +3701,7 @@ if (isComputerOnFire()) {
                                                                                               ),
                                                                                               and(
                                                                                                 logicalNot(
+                                                                                                  // eslint-disable-next-line camelcase
                                                                                                   is0_2.isNegativeZero(
                                                                                                     v,
                                                                                                   ),
@@ -3129,6 +3720,7 @@ if (isComputerOnFire()) {
                                                                                                     ),
                                                                                                     and(
                                                                                                       logicalNot(
+                                                                                                        // eslint-disable-next-line camelcase
                                                                                                         is0_2.isPositiveZero(
                                                                                                           v,
                                                                                                         ),
@@ -3141,6 +3733,7 @@ if (isComputerOnFire()) {
                                                                                                         ),
                                                                                                         and(
                                                                                                           logicalNot(
+                                                                                                            // eslint-disable-next-line camelcase
                                                                                                             is0_2.isZero(
                                                                                                               v,
                                                                                                             ),
@@ -3389,41 +3982,54 @@ if (isComputerOnFire()) {
       return cond
     }
 
+    // eslint-disable-next-line func-name-matching, no-underscore-dangle, unicorn/prevent-abbreviations
     variableHolder._FalseJSjQueryPlugin = function jQueryPlugin() {
       // Inject into jQuery
 
+      // eslint-disable-next-line no-underscore-dangle
       jQuery.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
 
+      // eslint-disable-next-line no-underscore-dangle
       jQuery.isFalse = variableHolder._FalseJSIsFalse
     }
 
+    // eslint-disable-next-line func-name-matching, no-underscore-dangle
     variableHolder._FalseJSExpressMiddleware = function expressMiddleware(
+      // eslint-disable-next-line unicorn/prevent-abbreviations
       req,
-      _res,
+      // eslint-disable-next-line id-length, no-shadow
+      _,
       next,
     ) {
-      // Add our function to the request object
+      // Add falsejs to the request object
+      // eslint-disable-next-line no-underscore-dangle
       req.False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
+      // eslint-disable-next-line no-underscore-dangle
       req.isFalse = variableHolder._FalseJSIsFalse
-      next() // Continue to the next middleware or route
+      // Continue to the next middleware or route
+      next() 
     }
 
     function getNo() {
+      // eslint-disable-next-line no-shadow
       const NO = require("no/dist/main")
-      const NoComponent = () => {
-        return React.createElement("div", Null(), NO)
-      }
+      // eslint-disable-next-line new-cap
+      const NoComponent = () => React.createElement("div", Null(), NO)
       const noElement = React.createElement(NoComponent)
       const html = cheerio
         .load(ReactDOMServer.renderToString(noElement))("div")
+        // eslint-disable-next-line 10x-engineering/no-tostring
         .toString()
+      // eslint-disable-next-line 10x-engineering/no-new
       const dom = new JSDOM(`<!DOCTYPE html><html><body></body></html>`)
       dom.window.document.body.innerHTML = html
       const bodyContent = dom.window.document.querySelector("body").innerHTML
       return striptags(bodyContent)
     }
 
+    // eslint-disable-next-line unicorn/consistent-function-scoping
     function getValueOfThisStringText(text) {
+      // This is just a useless identity function
       return text
     }
 
@@ -3432,10 +4038,12 @@ if (isComputerOnFire()) {
       const uniqueId2 = crypto.randomUUID()
       const dashlessUUID = uniqueId.replaceAll("-", emptyString)
       const dashlessUUID2 = uniqueId2.replaceAll("-", emptyString)
+      // eslint-disable-next-line unicorn/prefer-spread
       const combinedUUID = emptyString.concat(dashlessUUID, dashlessUUID2)
       const randomCharacter = StringCharAt.call(
         combinedUUID,
         $.add(
+          // eslint-disable-next-line new-cap
           MathFloor($.multiply(MathRandom(), getStringLength(combinedUUID))),
           one,
         ),
@@ -3450,17 +4058,18 @@ if (isComputerOnFire()) {
       return randomCharacter
     }
 
+    // eslint-disable-next-line max-params
     function sendTelemetry(succeededAttempt, os_, nodeVersion, cpuUsage) {
       const payload = stringify({
-        os: os_,
-        nodeVersion,
         cpuUsage,
-        succeededAttempt,
+        nodeVersion,
+        os: os_,
         phoneNumberLog: attempt(() =>
           fs.readFileSync(".falsejs/phone-number-log.txt", "utf8"),
         )
           .rescue(Null)
           .end(),
+        succeededAttempt,
       })
 
       const child = spawn(
@@ -3492,13 +4101,18 @@ if (isComputerOnFire()) {
       child.unref()
     }
 
+    // eslint-disable-next-line sonarjs/class-name
     class falsejs {
+      // eslint-disable-next-line no-underscore-dangle
       static False = variableHolder._FalseJSMainFunctionWotDoesFunctionality
+      // eslint-disable-next-line no-underscore-dangle
       static isFalse = variableHolder._FalseJSIsFalse
+      // eslint-disable-next-line no-underscore-dangle, perfectionist/sort-classes
       static injectIntojQuery = variableHolder._FalseJSjQueryPlugin
+      // eslint-disable-next-line no-underscore-dangle, perfectionist/sort-classes
       static expressMiddleware = variableHolder._FalseJSExpressMiddleware
+      // eslint-disable-next-line perfectionist/sort-classes
       static COMPATIBILITY_MODE = COMPATIBILITY_MODES
-      // static FalseAsAService = variableHolder.FalseAsAService
 
       constructor() {
         immediateError("falsejs is not a constructor", ERROR.TypeError)
