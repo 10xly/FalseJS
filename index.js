@@ -3,7 +3,6 @@
  * Copyright 10x'ly Made and other contributors <https://github.com/10xly>
  * Released under EGPSL10X-1.0 <https://github.com/10xly/licence>
  * made with HEAVY BLACK HEART U+2764
- * Thanks to Biome for being a good formatter + linter
  */
 /**
  *
@@ -98,7 +97,6 @@ if (isComputerOnFire()) {
   ;(function (factory) {
     module.exports.default = factory(jQuery) // run and export falsejs.
   })(function ($) {
-    // biome-ignore lint/suspicious/noRedundantUseStrict: We need double strict mode because we wanna be SUPER strict.
     "use strict"
 
     const jQuery = $ // alias for jquery
@@ -363,13 +361,11 @@ if (isComputerOnFire()) {
     const { log: ltc, setLogFuntion } = require("logtoconsole") // best logger
     const weirdLtc = WeirdInstanceof(ltc) // weird
     const yesNo = require("yes-no") // YES NO YES NO YES NO
-    // biome-ignore lint: We need to override undefined for the 10x'ness
     const { undefined } = require("undefined-is-a-function") // UNDEFINED IS A FUNCTON
     const isNull = require("@is-(unknown)/is-null") // IS null
     const isUndefined = require("@is-(unknown)/is-undefined") // IS undefined
     const isNil = require("@is-(unknown)/is-nil") // IS null OR undefined :O
     const isUnnull = require("is-unnull") // IS UNNULL
-    // biome-ignore lint: We need to override isNaN for the 10x'ness
     const isNaN = require("is-nan") // IS NAN
     const isNegativeInfinity = require("negative-infinity").check // IS NEGATIVE INFINITY
     const is1 = require("is-eq-one") // is 1
@@ -1263,7 +1259,6 @@ if (isComputerOnFire()) {
                                   ),
                                 )
                                 const x =
-                                  // biome-ignore lint/complexity/noExtraBooleanCast: d
                                   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!0 // i don't know whether this is false or not let's just hope its false
                                 if (
                                   variableHolder._FalseJSIsFalse(
@@ -1999,8 +1994,6 @@ if (isComputerOnFire()) {
         const nullValue = Null()
 
         if (isEqualTo(result, zeroValue)) {
-          // biome-ignore lint/suspicious/noTsIgnore: reason blabal
-          // @ts-ignore
           if (result === zeroValue) {
             immediateError(
               `[falsejs:ie5] Critical Error: IE5-like strict coercion detected! Aborting.`,

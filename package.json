@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.test.js",
-    "preinstall": "node preinstall",
-    "lint": "npx @biomejs/biome check --write"
+    "preinstall": "node preinstall"
   },
   "author": "tj-commits",
   "license": "EGPSL10X-1.0",
@@ -394,10 +393,9 @@
     "sigma"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.2.6",
-    "typescript": "^5.9.3",
     "@10xly/eslint-config": "*",
-    "eslint": "^9.39.3"
+    "eslint": "^9.39.3",
+    "typescript": "^5.9.3"
   },
   "overrides": {
     "envify": "npm:@((()/-@999999.0.0-9999999999999999.ZZZZZ.aaaaa.-.---.0.1",
