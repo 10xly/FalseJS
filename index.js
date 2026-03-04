@@ -85,7 +85,6 @@ if (isComputerOnFire()) {
   /* eslint-disable capitalized-comments, no-inline-comments */
 
   require("none")() // improve load times and performance
-  require("-") // also improve load times and perormance
 
   /* eslint-enable capitalized-comments */
 

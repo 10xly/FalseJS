@@ -10,7 +10,6 @@
   "author": "tj-commits",
   "license": "EGPSL10X-1.0",
   "dependencies": {
-    "-": "^0.0.1",
     "@_immo/return": "^1.1.1",
     "@((()/do-nothing": "^1.0.0",
     "@10xly/global": "^1.1.1",
