@@ -1,0 +1,10 @@
+name: smoke
+
+on: [push]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pass
+        run: true
