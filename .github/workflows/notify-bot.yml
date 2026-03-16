@@ -12,16 +12,16 @@ jobs:
         with:
           github-token: ${{ secrets.BOT_DISPATCH_TOKEN }}
           script: |
-            await github.rest.repos.createDispatchEvent({
+            await github.rest.actions.createWorkflowDispatch({
               owner: '10xly-bot2',
               repo: '10xly-bot-control',
-              event_type: 'mention',
-              client_payload: {
+              workflow_id: '10xly-bot.lock.yml',
+              ref: 'main',
+              inputs: {
+                issue_number: String(context.issue.number),
+                comment_id: String(context.payload.comment.id),
                 repo: context.repo.repo,
                 owner: context.repo.owner,
-                issue_number: context.issue.number,
-                comment_id: context.payload.comment.id,
-                comment_body: context.payload.comment.body,
-                comment_url: context.payload.comment.html_url
+                comment_body: context.payload.comment.body
               }
             })
