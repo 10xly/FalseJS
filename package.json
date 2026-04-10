@@ -1,6 +1,6 @@
 {
   "name": "@falsejs/falsejs",
-  "version": "4.1.14",
+  "version": "4.1.15",
   "description": "FalseJS",
   "main": "index.js",
   "scripts": {
