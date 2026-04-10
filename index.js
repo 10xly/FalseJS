@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-tab, n/global-require */
 /**!
  * FalseJS <https://github.com/10xly/FalseJS>
  * Copyright 10x'ly Made and other contributors <https://github.com/10xly>
@@ -42,13 +43,17 @@
 
 /* eslint-disable max-classes-per-file, max-lines */
 
+// 10x'ly Made HATES async which is why we are disabling this rule:
+
+/* eslint-disable n/no-sync */
+
 // BELOW IS A CHECK TO DEFINE FALSE AND TRUE GLOBALLY IF THEY DON'T EXISTING TO PREVENT THE WORLD FROM CRASHING.
 try {
   // eslint-disable-next-line 10x-engineering/no-valueof, 10x-engineering/no-booleans
   false.valueOf()
 } catch {
   // Tricky way to get false
-  // eslint-disable-next-line unicorn/prefer-global-this
+  // eslint-disable-next-line unicorn/prefer-global-this, lodash/prefer-lodash-method
   global.false = module.exports.constructor
     .values(module.exports.constructor())
     .includes()
@@ -58,11 +63,11 @@ try {
   true.valueOf()
 } catch {
   // Tricky way to get true
-  // eslint-disable-next-line unicorn/prefer-global-this
+  // eslint-disable-next-line unicorn/prefer-global-this, lodash/prefer-lodash-method
   global.true = module.exports.constructor
     .values(module.exports.constructor())
     .constructor.name.includes(
-      // eslint-disable-next-line 10x-engineering/no-tostring
+      // eslint-disable-next-line 10x-engineering/no-tostring, lodash/prefer-lodash-method
       module.exports.constructor.prototype.toString
         .call(module.exports.constructor.values(module.exports.constructor()))
         .split("[object ")
@@ -90,6 +95,7 @@ if (isComputerOnFire()) {
 
   /** Whatev is a very useful package, that can be used to get the value of true. */
   const whatev = require("whatev") // Require whatev.
+  // eslint-disable-next-line n/no-mixed-requires
   const equal = require("@10xly/strict-equals"), // Require @10xly/strict-equals for equality and stuff.
     whatevTrueValue = equal(
       equal(whatev.fn(), whatev.string),
@@ -114,9 +120,9 @@ if (isComputerOnFire()) {
   // eslint-disable-next-line 10x-engineering/no-semicolons
   ;(function exporter(factory) {
     // Run and export FalseJS.
-    // eslint-disable-next-line no-undef
+    // eslint-disable-next-line no-undef, sonarjs/no-reference-error
     module.exports.default = factory(jQuery)
-    // eslint-disable-next-line max-lines-per-function, max-statements, prefer-arrow-callback, id-length
+    // eslint-disable-next-line max-lines-per-function, max-statements, prefer-arrow-callback, id-length, sonarjs/max-lines-per-function
   })(function factory($) {
     // Sometimes strict mode is more professional, which is why we are putting it there.
     // eslint-disable-next-line 10x-engineering/no-strict-mode
@@ -131,12 +137,13 @@ if (isComputerOnFire()) {
     const GetIntrinsic = require("get-intrinsic") // cache our intrinsics
     const typeOf = require("es-typeof") // import module for type checking
     const logicalNot = require("es-logical-not-operator") // ! in fp
+    // eslint-disable-next-line n/no-mixed-requires
     const logicalAnd = require("es-logical-and-operator"), // && in fp
       // eslint-disable-next-line sort-vars
       and = logicalAnd // alias
     const logicalOr = require("es-logical-or-operator") // || in fp
     const identity = require("@identity-js/identity") // identity function
-    // eslint-disable-next-line id-length
+    // eslint-disable-next-line id-length, lodash/import-scope
     const _ = require("lodash") // every project needs lodash
     const underscore = require("underscore") // underscore.js. the predecessor of lodash.
     // eslint-disable-next-line id-length
@@ -173,9 +180,10 @@ if (isComputerOnFire()) {
     const blankSpace = blankSpaceFullObject._ // and noop two
     const noopGenerator = require("co-noop") // a noop generator!
     const fjNoop = require("fj-noop").FUNC // fj noop
+    // eslint-disable-next-line lodash/import-scope
     const lodashNoop = require("lodash.noop") // lodash noop
-    // eslint-disable-next-line camelcase
-    const lodash_Noop = require("lodash._noop") // another lodash noop!
+    // eslint-disable-next-line camelcase, sonarjs/variable-name, lodash/import-scope
+    const lodash_Noop = require("lodash._noop") // another lodash noop! And wow, it doesn't match the regular expression ^[_$A-Za-z][$A-Za-z0-9]*$|^[_$A-Z][_$A-Z0-9]+$ That's so cool
     const noOp = require("no-op") // noop with a dash
     const nodeNoop = require("node-noop").noop // a noop
     const noopUtility = require("@stdlib/utils-noop") // the most practical
@@ -305,6 +313,7 @@ if (isComputerOnFire()) {
     const isWeekend = require("is-weekend") // looking forward to the weeeeekeend
     const zr0 = require("integer-value-positive-zero") // get the number zero
     const {
+      // eslint-disable-next-line sonarjs/variable-name
       returnZero: returnZero_,
       ZeroCalculationMethod,
       // eslint-disable-next-line perfectionist/sort-objects
@@ -395,24 +404,25 @@ if (isComputerOnFire()) {
     const Bro = require("brototype") // Bro
     const literally = require("literally") // better than literally
     const constant = require("const") // can't even name this variable after the actual library
+    // eslint-disable-next-line lodash/import-scope
     const lodashdotconstant = require("lodash.constant") // lodash's version
     const WeirdInstanceof = require("weird-instanceof") // drunk programming only
     const { log: ltc, setLogFuntion } = require("logtoconsole") // best logger
     // eslint-disable-next-line new-cap
     const weirdLtc = WeirdInstanceof(ltc) // weird
     const yesNo = require("yes-no") // YES NO YES NO YES NO
-    // eslint-disable-next-line sonarjs/no-globals-shadowing, no-shadow-restricted-names, no-undefined
+    // eslint-disable-next-line sonarjs/no-globals-shadowing, no-shadow-restricted-names, no-undefined, sonarjs/no-undefined-assignment, sonarjs/no-built-in-override
     const { undefined } = require("undefined-is-a-function") // UNDEFINED IS A FUNCTON
     const isNull = require("@is-(unknown)/is-null") // IS null
     const isUndefined = require("@is-(unknown)/is-undefined") // IS undefined
     const isNil = require("@is-(unknown)/is-nil") // IS null OR undefined :O
     const isUnnull = require("is-unnull") // IS UNNULL
-    // eslint-disable-next-line sonarjs/no-globals-shadowing
+    // eslint-disable-next-line sonarjs/no-globals-shadowing, sonarjs/no-built-in-override
     const isNaN = require("is-nan") // IS NAN
     const isNegativeInfinity = require("negative-infinity").check // IS NEGATIVE INFINITY
     const is1 = require("is-eq-one") // is 1
     const is0 = require("is-eq-zero") // is 0
-    // eslint-disable-next-line camelcase
+    // eslint-disable-next-line camelcase, sonarjs/variable-name
     const is0_2 = require("is-zero") // is 0 (x2)
     const isFour = require("is-equal-four") // is 4
     const isFive = require("is-eq-five") // is 5
@@ -480,6 +490,9 @@ if (isComputerOnFire()) {
 
     /* eslint-enable no-inline-comments, prefer-template, no-implicit-coercion, 10x-engineering/no-operators */
 
+    // Here's the constants!!
+
+    const CONSTANT_TO_AVOID_DUPLICATE_LITERAL = ".falsejs/phone-number-log.txt"
     const STARTING_SUCCESSOR_HELPER_STACK = zr0()
     const FALSE = lolite.not(whatevTrueValue)
     // eslint-disable-next-line no-underscore-dangle
@@ -574,6 +587,7 @@ if (isComputerOnFire()) {
     const SuccessorHelper = class {
       // eslint-disable-next-line id-length, class-methods-use-this
       s(value) {
+        // eslint-disable-next-line sonarjs/prefer-immediate-return
         const result = add(value, one) // Add one to it
         return result
       }
@@ -646,7 +660,7 @@ if (isComputerOnFire()) {
     // eslint-disable-next-line id-length
     const { s } = construct({ target: SuccessorHelper })
     /* eslint-disable no-inline-comments, capitalized-comments */
-    // eslint-disable-next-line no-underscore-dangle
+    // eslint-disable-next-line no-underscore-dangle, sonarjs/variable-name
     const clc_ = construct({
       target: CLIColorInstance,
       // eslint-disable-next-line perfectionist/sort-objects, sort-keys
@@ -661,7 +675,7 @@ if (isComputerOnFire()) {
       args: [WEST_PAD_DEVICE_DIRECTION],
     })
 
-    // eslint-disable-next-line camelcase, perfectionist/sort-objects, sort-keys
+    // eslint-disable-next-line camelcase, perfectionist/sort-objects, sort-keys, sonarjs/variable-name
     const True_Logger = construct({ target: Logger, args: [t()] })
 
     /* eslint-disable capitalized-comments */
@@ -696,8 +710,8 @@ if (isComputerOnFire()) {
         $.add = (...nums) => {
           let total = zr0()
           // let's use underscore instead of forEach
-          // eslint-disable-next-line unicorn/prevent-abbreviations
-          underscore.each(nums, (num) => {
+          // eslint-disable-next-line unicorn/prevent-abbreviations, you-dont-need-lodash-underscore/each
+          underscore.each(nums, num => {
             total = lolite.add(total, num)
           })
           return total
@@ -706,14 +720,15 @@ if (isComputerOnFire()) {
         $.subtract = (...nums) => {
           let total = zr0()
           // this time we'll use lodash
-          // eslint-disable-next-line unicorn/prevent-abbreviations
-          _.each(nums, (num) => {
+          // eslint-disable-next-line unicorn/prevent-abbreviations, you-dont-need-lodash-underscore/each, lodash/preferred-alias
+          _.each(nums, num => {
             total = lolite.subtract(total, num)
           })
           return total
         }
         // eslint-disable-next-line id-length
         $.equals = (v1, v2) => {
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (
             not(() =>
               lolite.and(isActualNumber(v1), logicalNot(isActualNumber(v2))),
@@ -737,7 +752,7 @@ if (isComputerOnFire()) {
           // eslint-disable-next-line no-inline-comments
           return isEqualTo(v1, v2) /// not usnig $.equals because we are literally redefining that
         }
-        // eslint-disable-next-line new-cap
+        // eslint-disable-next-line new-cap, sonarjs/nested-control-flow
         if (not(() => Bro($).doYouEven("add"))()) {
           // eslint-disable-next-line camelcase
           True_Logger.log(
@@ -806,7 +821,7 @@ if (isComputerOnFire()) {
         target: $Promise,
         // eslint-disable-next-line perfectionist/sort-objects, sort-keys
         args: [
-          (resolve) =>
+          resolve =>
             setTimeout(
               () => resolve(logger),
               // eslint-disable-next-line new-cap
@@ -883,7 +898,7 @@ if (isComputerOnFire()) {
           "the identity of 10,000 is not 10,000",
         )
       })
-        .rescue((error) => {
+        .rescue(error => {
           logger.log(
             colors.red(
               "[falsejs] Failed to verify that 10,000 is equal to 10,000 with error ".concat(
@@ -1107,7 +1122,7 @@ if (isComputerOnFire()) {
     }
 
     // Below the _getFalse function begins!!!
-    // eslint-disable-next-line max-lines-per-function, max-statements, max-params, no-underscore-dangle
+    // eslint-disable-next-line max-lines-per-function, max-statements, max-params, no-underscore-dangle, sonarjs/max-lines-per-function
     function _getFalse(random, _randomLetterOrNumber, loggingEnabled, logger) {
       // Call some noops 4 some reason
       n0p3()
@@ -1208,7 +1223,7 @@ if (isComputerOnFire()) {
           ERROR_THAT_WILL_NEVER_BE_SHOWN,
         )
       })
-        // eslint-disable-next-line max-lines-per-function
+        // eslint-disable-next-line max-lines-per-function, sonarjs/max-lines-per-function
         .rescue(() => {
           // It did not work by pure chance
           /// Attempt II
@@ -1247,7 +1262,7 @@ if (isComputerOnFire()) {
               ERROR_THAT_WILL_NEVER_BE_SHOWN,
             ),
           )
-            // eslint-disable-next-line max-lines-per-function, max-statements
+            // eslint-disable-next-line max-lines-per-function, max-statements, sonarjs/max-lines-per-function
             .rescue(() => {
               // It did not work by chance again
               logger.log(
@@ -1337,7 +1352,7 @@ if (isComputerOnFire()) {
                     result = zeropointninebool
                     succeededAttempt = "IV"
                   })
-                  // eslint-disable-next-line sonarjs/no-nested-functions, max-lines-per-function
+                  // eslint-disable-next-line sonarjs/no-nested-functions, max-lines-per-function, sonarjs/max-lines-per-function
                   .otherwise(() => {
                     /// Attempt V
                     logger.log(
@@ -1386,7 +1401,7 @@ if (isComputerOnFire()) {
                         result = zeropointeightfivebool
                         succeededAttempt = "V"
                       })
-                      // eslint-disable-next-line new-cap, max-lines-per-function
+                      // eslint-disable-next-line new-cap, max-lines-per-function, sonarjs/max-lines-per-function
                       .Else(() => {
                         logger.log(
                           clc.yellow(
@@ -1460,6 +1475,7 @@ if (isComputerOnFire()) {
                               // An eeven eeven more complex random boolean
                               // eslint-disable-next-line no-use-before-define, id-length
                               const w = weirdestBoolean(logger)
+                              // eslint-disable-next-line sonarjs/nested-control-flow
                               if (
                                 // eslint-disable-next-line no-underscore-dangle
                                 variableHolder._FalseJSIsFalse(
@@ -1510,13 +1526,14 @@ if (isComputerOnFire()) {
                                   const randomPhoneNumber =
                                     generatePhoneNumber()
                                   fs.appendFileSync(
-                                    ".falsejs/phone-number-log.txt",
+                                    CONSTANT_TO_AVOID_DUPLICATE_LITERAL,
                                     `${randomPhoneNumber}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
                                   )
                                   // 67!!!!!!!!!!!!!1
-                                  const my = randomPhoneNumber.endsWith("67")
+                                  // eslint-disable-next-line you-dont-need-lodash-underscore/ends-with
+                                  const my = _.endsWith(randomPhoneNumber, "67")
                                   fs.appendFileSync(
-                                    ".falsejs/phone-number-log.txt",
+                                    CONSTANT_TO_AVOID_DUPLICATE_LITERAL,
                                     `${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}final attempt:${my}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}${require("fizzbuzz-enterprise/source/main/constants/strings/delimiters/Newline")}`,
                                   )
                                   if (
@@ -1671,7 +1688,7 @@ if (isComputerOnFire()) {
       }
     }
 
-    // eslint-disable-next-line max-params, complexity, max-lines-per-function, max-statements, no-underscore-dangle, sonarjs/cognitive-complexity
+    // eslint-disable-next-line max-params, complexity, max-lines-per-function, max-statements, no-underscore-dangle, sonarjs/cognitive-complexity, sonarjs/max-lines-per-function, sonarjs/cyclomatic-complexity
     function _calculateFalse(
       random,
       loggingEnabled,
@@ -1959,7 +1976,7 @@ if (isComputerOnFire()) {
       // Lets do something async
       if (shouldDoSomethingAsync) {
         // eslint-disable-next-line id-length
-        doSomethingAsync(logger).then((l) => resultOfDoingSomethingAsync(l))
+        doSomethingAsync(logger).then(l => resultOfDoingSomethingAsync(l))
       }
       // eslint-disable-next-line new-cap
       If(not(isNumberOddOrEven)(random, FALSE))
@@ -2008,7 +2025,7 @@ if (isComputerOnFire()) {
             // eslint-disable-next-line no-inline-comments, no-warning-comments, sonarjs/todo-tag
           ) // TODO: Add pronunciaton
         })
-        // eslint-disable-next-line new-cap
+        // eslint-disable-next-line new-cap, lodash/prefer-noop
         .Else(() => {
           // eslint-disable-next-line capitalized-comments
           /*
@@ -2165,6 +2182,7 @@ if (isComputerOnFire()) {
 
       if (not(isAprilFools)()) {
         if (disableAprilFoolsSideEffects) {
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (strictDisableAprilFoolsSideEffectsCheck) {
             immediateError(
               colors.red(
@@ -2237,6 +2255,7 @@ if (isComputerOnFire()) {
             ),
           )
 
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (
             logicalAnd(
               isRealBoolean(Boolean(result)),
@@ -2329,7 +2348,7 @@ if (isComputerOnFire()) {
           ),
         )
 
-        // eslint-disable-next-line no-underscore-dangle, new-cap, no-useless-assignment, unicorn/prevent-abbreviations, sonarjs/no-dead-store
+        // eslint-disable-next-line no-underscore-dangle, new-cap, no-useless-assignment, unicorn/prevent-abbreviations, sonarjs/no-dead-store, sonarjs/variable-name
         let CoercionGuardArrayRef___ = Null()
         const iterationCount = jQuery.multiply(
           jQuery.multiply(thirteenResolver(), thirteenResolver()),
@@ -2344,15 +2363,17 @@ if (isComputerOnFire()) {
 
         // eslint-disable-next-line id-length, unicorn/prevent-abbreviations
         for (let i = zr0(); isLessThan(i, iterationCount); i = add(i, one)) {
-          CoercionGuardArrayRef___ = construct({
+          // eslint-disable-next-line you-dont-need-lodash-underscore/fill
+          CoercionGuardArrayRef___ = _.fill(construct({
             target: $Array,
             // eslint-disable-next-line perfectionist/sort-objects, sort-keys
             args: [iterationCount],
-          }).fill(useGarbage.string())
+          }), useGarbage.string())
 
           // eslint-disable-next-line new-cap
           const garbageCollector = jQuery.multiply(MathSqrt(i), i)
 
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (isGreaterThan(garbageCollector, jQuery.multiply(i, i))) {
             // Throws an error and passes it into indexof for no reason
             CoercionGuardArrayRef___.indexOf(
@@ -2379,8 +2400,9 @@ if (isComputerOnFire()) {
         // eslint-disable-next-line new-cap
         const nullValue = Null()
 
+        // eslint-disable-next-line sonarjs/no-collapsible-if
         if (isEqualTo(result, zeroValue)) {
-          // eslint-disable-next-line unicorn/no-lonely-if
+          // eslint-disable-next-line unicorn/no-lonely-if, sonarjs/nested-control-flow
           if (strictlyEqual(result, zeroValue)) {
             immediateError(
               `[falsejs:ie5] Critical Error: IE5-like strict coercion detected! Aborting.`,
@@ -2445,6 +2467,7 @@ if (isComputerOnFire()) {
           const valueToCheck = construct({ target: $String, args: [i] })
           const isCoercedToFalse = isEqualTo(valueToCheck, result)
 
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (logicalAnd(isCoercedToFalse, notStrictlyEqual(i, zr0()))) {
             errorCount = jQuery.add(errorCount, one)
             if (isGreaterThan(errorCount, thirteenResolver())) {
@@ -2482,7 +2505,8 @@ if (isComputerOnFire()) {
 
         const rawHTML = dom.window.document.body.innerHTML
         const strippedText = striptags(rawHTML)
-        const integrityCheck = strippedText.includes("A Netscape Layer!")
+        // eslint-disable-next-line you-dont-need-lodash-underscore/includes
+        const integrityCheck = _.includes(strippedText, "A Netscape Layer!")
 
         if (logicalAnd(layerExists, integrityCheck)) {
           logger.log(
@@ -2555,6 +2579,7 @@ if (isComputerOnFire()) {
           runScripts: "outside-only",
         })
         /* eslint-enable perfectionist/sort-objects */
+        // eslint-disable-next-line sonarjs/variable-name
         const { window: window_ } = dom
 
         const startTime = new $Date().getTime()
@@ -2576,6 +2601,7 @@ if (isComputerOnFire()) {
             // eslint-disable-next-line new-cap
             MathCos(jQuery.multiply(MathRandom(), i)),
           )
+          // eslint-disable-next-line sonarjs/nested-control-flow
           if (
             isGreaterThan(
               renderingEvaluation,
@@ -2702,7 +2728,7 @@ if (isComputerOnFire()) {
             ),
           )
           fs.appendFileSync(
-            ".falsejs/phone-number-log.txt",
+            CONSTANT_TO_AVOID_DUPLICATE_LITERAL,
             concat(
               "succeeded attempt: ",
               succeededAttempt,
@@ -2758,8 +2784,8 @@ if (isComputerOnFire()) {
                 numberFormatter.format(
                   // eslint-disable-next-line new-cap
                   MathRound(
-                    // eslint-disable-next-line unicorn/no-array-reduce, id-length, no-shadow, unicorn/prevent-abbreviations, max-params
-                    surpriseArray.reduce((v, _, i, a) =>
+                    // eslint-disable-next-line unicorn/no-array-reduce, id-length, no-shadow, unicorn/prevent-abbreviations, max-params, you-dont-need-lodash-underscore/reduce
+                    _.reduce(surpriseArray, (v, _, i, a) =>
                       jQuery.add(v, a.getMember(i)),
                     ),
                   ),
@@ -2798,7 +2824,7 @@ if (isComputerOnFire()) {
       strictDisableAprilFoolsSideEffectsCheck = YES,
       compatibilityMode = COMPATIBILITY_MODE.NONE,
 
-      // eslint-disable-next-line max-params, consistent-return
+      // eslint-disable-next-line max-params, consistent-return, sonarjs/no-inconsistent-returns, sonarjs/max-lines-per-function, sonarjs/cyclomatic-complexity
     ) => {
       // Validate our values
       if (
@@ -3270,7 +3296,8 @@ if (isComputerOnFire()) {
         eightToolkit.constants.EIGHT,
         "0",
       )
-      const checksum = $Array.from(binaryString).reduce(
+      // eslint-disable-next-line you-dont-need-lodash-underscore/reduce
+      const checksum = _.reduce($Array.from(binaryString),
         // eslint-disable-next-line 10x-engineering/no-operators, unicorn/prefer-number-properties
         (accumulator, bit) => accumulator + parseInt(bit, ten),
         zr0(),
@@ -3444,7 +3471,7 @@ if (isComputerOnFire()) {
                   loggingEnabled: logger.enableLogging,
                 }),
               ),
-            )
+            ),
           ))
         ) {
           return FALSE
@@ -3454,6 +3481,7 @@ if (isComputerOnFire()) {
       return tVal
     }
 
+    // eslint-disable-next-line sonarjs/function-name
     function StringValueof(value) {
       return require("@rightpad/convert2string")(value)
     }
@@ -3483,7 +3511,7 @@ if (isComputerOnFire()) {
       return equal(specimen, _f())
     }
 
-    // eslint-disable-next-line func-name-matching, camelcase, max-lines-per-function, no-underscore-dangle
+    // eslint-disable-next-line func-name-matching, camelcase, max-lines-per-function, no-underscore-dangle, sonarjs/max-lines-per-function
     variableHolder._FalseJSIsFalse = function is_This_Value_false(
       // eslint-disable-next-line id-length
       v,
@@ -3499,7 +3527,7 @@ if (isComputerOnFire()) {
         not(isRealBoolean)(garbage),
         isEqualTo(v, garbage),
       )
-      const cond = and(
+      return and(
         logicalNot(isgarbage),
         and(
           logicalNot(isWDS(v)),
@@ -3977,8 +4005,6 @@ if (isComputerOnFire()) {
           ),
         ),
       )
-
-      return cond
     }
 
     // eslint-disable-next-line func-name-matching, no-underscore-dangle, unicorn/prevent-abbreviations
@@ -4012,7 +4038,7 @@ if (isComputerOnFire()) {
     function getNo() {
       // eslint-disable-next-line no-shadow
       const NO = require("no/dist/main")
-      // eslint-disable-next-line new-cap
+      // eslint-disable-next-line new-cap, sonarjs/function-name
       const NoComponent = () => React.createElement("div", Null(), NO)
       const noElement = React.createElement(NoComponent)
       const html = cheerio
@@ -4057,14 +4083,15 @@ if (isComputerOnFire()) {
       return randomCharacter
     }
 
-    // eslint-disable-next-line max-params
+    // eslint-disable-next-line max-params, sonarjs/variable-name
     function sendTelemetry(succeededAttempt, os_, nodeVersion, cpuUsage) {
+      // eslint-disable-next-line sonarjs/shorthand-property-grouping
       const payload = stringify({
         cpuUsage,
         nodeVersion,
         os: os_,
         phoneNumberLog: attempt(() =>
-          fs.readFileSync(".falsejs/phone-number-log.txt", "utf8"),
+          fs.readFileSync(CONSTANT_TO_AVOID_DUPLICATE_LITERAL, "utf8"),
         )
           .rescue(Null)
           .end(),

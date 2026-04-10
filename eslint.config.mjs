@@ -13,5 +13,10 @@ export default [
       "old.js",
       "preinstall.js"
     ]
+  },
+  {
+    rules: {
+      "sonarjs/max-lines": "off"
+    }
   }
 ]
