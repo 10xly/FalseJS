@@ -17,7 +17,6 @@
  * 10x'ly Made Software Ventures AB
  * Airlock Ventures Inc.
  * tj-commits
- * Open-source community
  *
  */
 /*--------------------------------------------------------------------------------
