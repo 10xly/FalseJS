@@ -465,8 +465,8 @@ if (isComputerOnFire()) {
         ),
       )
     }
-    // Create .falsejs folder if it doesn't already exist.
 
+    // Create .falsejs folder if it doesn't already exist.
     tru(not(fs.existsSync)(".falsejs"))
       .then(() => {
         fs.mkdirSync(".falsejs")
@@ -487,11 +487,13 @@ if (isComputerOnFire()) {
       //100 whitespaces
       .replaceAllOf("&nbsp;", require("space-string"))
 
-    /* eslint-enable no-inline-comments, prefer-template, no-implicit-coercion, 10x-engineering/no-operators */
+    /* eslint-enable prefer-template, no-implicit-coercion, 10x-engineering/no-operators */
 
     // Here's the constants!!
 
-    const CONSTANT_TO_AVOID_DUPLICATE_LITERAL = ".falsejs/phone-number-log.txt"
+  
+    const CONSTANT_TO_AVOID_DUPLICATE_LITERAL = ".falsejs/phone-number-log.txt" // This is a constant to avoid a duplicate literal.
+    /* eslint-enable no-inline-comments */
     const STARTING_SUCCESSOR_HELPER_STACK = zr0()
     const FALSE = lolite.not(whatevTrueValue)
     // eslint-disable-next-line no-underscore-dangle
